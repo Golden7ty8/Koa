@@ -48,11 +48,13 @@ public class ControlPlayer : MonoBehaviour
         bool r = Input.GetButton("Run");
         bool c = Input.GetButton("Crouch");
 
-        jumpInputDelayTimer = Input.GetButtonDown("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
+        //jumpInputDelayTimer = Input.GetButtonDown("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
+        jumpInputDelayTimer = Input.GetButton("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
         bool j = jumpInputDelayTimer > 0;
 
         groundeddelayTimer = groundSensorScript.isGrounded ? delayedJumpWindow : (groundeddelayTimer > 0 ? groundeddelayTimer - Time.deltaTime : 0);
         bool isGrounded = groundeddelayTimer > 0;
+        //bool isGrounded = groundSensorScript.isGrounded;
 
         //If moving right, Koa points right, if moving left, Koa points left, and
         //if not moving, Koa points the same direction as before.
@@ -68,7 +70,7 @@ public class ControlPlayer : MonoBehaviour
             runAnimTimer = 0;
 
         //Countdown the time until you can jump again after jumping.
-        jumpReloadTime = jumpReloadTime > 0 ? jumpReloadTime - Time.deltaTime : 0;
+        jumpReloadTimer = jumpReloadTimer > 0 ? jumpReloadTimer - Time.deltaTime : 0;
 
         //Move Koa
         if (h != 0)
@@ -139,12 +141,12 @@ public class ControlPlayer : MonoBehaviour
 
         }
 
-        //If jump is not being help and you have upwards velocity, start cutting that upward velocity.
-        if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
+        //If jump is not being held and you have upwards velocity, start cutting that upward velocity.
+        /*if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
 
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * (Time.deltaTime * jumpVelocityCutMult + (1 - Time.deltaTime) * 1), rb.velocity.z);
 
-        }
+        }*/
 
     }
 }
