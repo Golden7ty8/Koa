@@ -303,7 +303,7 @@ MonoBehaviour:
   walkSpeed: 10
   runSpeedMult: 1.6
   crouchSpeedMult: 0.6
-  jumpHeight: 5
+  jumpHeight: 10
   runAnimTimerLength: 0.08
   delayedJumpWindow: 0.2
   jumpVelocityCutMult: 0.5

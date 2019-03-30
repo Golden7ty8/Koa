@@ -48,8 +48,8 @@ public class ControlPlayer : MonoBehaviour
         bool r = Input.GetButton("Run");
         bool c = Input.GetButton("Crouch");
 
-        //jumpInputDelayTimer = Input.GetButtonDown("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
-        jumpInputDelayTimer = Input.GetButton("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
+        jumpInputDelayTimer = Input.GetButtonDown("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 && Input.GetButton("Jump") ? jumpInputDelayTimer - Time.deltaTime : 0);
+        //jumpInputDelayTimer = Input.GetButton("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
         bool j = jumpInputDelayTimer > 0;
 
         groundeddelayTimer = groundSensorScript.isGrounded ? delayedJumpWindow : (groundeddelayTimer > 0 ? groundeddelayTimer - Time.deltaTime : 0);
@@ -142,11 +142,12 @@ public class ControlPlayer : MonoBehaviour
         }
 
         //If jump is not being held and you have upwards velocity, start cutting that upward velocity.
-        /*if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
+        if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
 
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * (Time.deltaTime * jumpVelocityCutMult + (1 - Time.deltaTime) * 1), rb.velocity.z);
+            //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * (Time.deltaTime * jumpVelocityCutMult + (1 - Time.deltaTime) * 1), rb.velocity.z);
+            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * jumpVelocityCutMult, rb.velocity.z);
 
-        }*/
+        }
 
     }
 }
