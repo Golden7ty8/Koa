@@ -22,7 +22,10 @@ public class SensorGround : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (other.tag != "Player")
+        {
             isGrounded = true;
+            //Debug.Log(other.n)
+        }
     }
 
     void OnTriggerExit(Collider other)

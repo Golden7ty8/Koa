@@ -14,6 +14,7 @@ public class ControlPlayer : MonoBehaviour
     public float runSpeedMult;
     public float crouchSpeedMult;
     public float jumpHeight;
+    public Vector3 spawnPoint;
 
     [Header("Debug Options:")]
     public float runAnimTimerLength;
@@ -148,6 +149,13 @@ public class ControlPlayer : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * jumpVelocityCutMult, rb.velocity.z);
 
         }
+
+    }
+
+    public void KillKoa() {
+
+        transform.position = spawnPoint;
+        rb.velocity = Vector3.zero;
 
     }
 }
