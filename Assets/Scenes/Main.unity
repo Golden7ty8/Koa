@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   koaAnimator: {fileID: 1362184317}
   rb: {fileID: 937004203}
-  groundSensorScript: {fileID: 1517543160}
+  groundSensorScript: {fileID: 413162642}
   walkSpeed: 10
   runSpeedMult: 1.6
   crouchSpeedMult: 0.6
@@ -354,6 +354,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.268078, y: 7.6, z: 0.5}
   m_Center: {x: 0, y: 3.8, z: 0}
+--- !u!114 &413162642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413162636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3770a157a064e7948a1be4619d7a374c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 937004203}
+  KoaHeight: 2.28
+  feetRatio: 0.125
+  isGrounded: 0
 --- !u!1 &465256083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 03232f50daff6f74e955f9fdb1a9b212,
@@ -871,13 +887,14 @@ GameObject:
   - component: {fileID: 1517543158}
   - component: {fileID: 1517543159}
   - component: {fileID: 1517543160}
+  - component: {fileID: 1517543161}
   m_Layer: 0
   m_Name: Ground Sensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1517543158
 Transform:
   m_ObjectHideFlags: 0
@@ -900,7 +917,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517543157}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.268078, y: 0.01, z: 0.5}
@@ -912,12 +929,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517543157}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3770a157a064e7948a1be4619d7a374c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  KoaHeight: 0
+  feetRatio: 0
   isGrounded: 0
+--- !u!54 &1517543161
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517543157}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1787918088
 GameObject:
   m_ObjectHideFlags: 0
