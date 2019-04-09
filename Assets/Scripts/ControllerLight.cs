@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColliderDeath : MonoBehaviour
+public class ControllerLight : MonoBehaviour
 {
-    public ControllerPlayer koaController;
+
+    [Header("Options")]
+    public float spinSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +17,6 @@ public class ColliderDeath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player") {
-
-            koaController.KillKoa();
-
-        }
+        transform.eulerAngles += new Vector3(0, spinSpeed * Time.deltaTime, 0);
     }
 }

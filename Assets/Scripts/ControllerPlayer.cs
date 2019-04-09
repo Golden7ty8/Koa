@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlPlayer : MonoBehaviour
+public class ControllerPlayer : MonoBehaviour
 {
     [Header("References:")]
     public Animator koaAnimator;
