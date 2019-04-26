@@ -690,15 +690,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Welcome to Koa Version 0.0.1.0.\n\n- Finished fleshing out Koa's controls
-    including a new feature: Controllable jump height.\n\n- Created Basic level with
-    basic objective.\n\n- Created rotating lights that nicly highlight the objects
-    (more or less).\n\n- Known Bug: Sometimes Koa does'nt seem to respond when jumping,
-    more info though beta testing on this is appreciated!\n\n\nFloating Cities Kevin
-    MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By Attribution 3.0
-    License\r\nhttp://creativecommons.org/licenses/by/3.0/\n\n\nDefault Controls (Can
-    be customized):\n \n\t- Jump: Spacebar\n\t- Walk: A/D keys or Left/Right arrow
-    keys.\n\t- Crouch: Right Control\n\t- Run: Left shift"
+  m_Text: "Welcome to Koa Version 0.0.1.1 - The Leg Cast Update\n\n - Dealt with bug
+    where Koa does not always respond to pressing the Jump key.\r\n\n - Fixed alter
+    collision.\r\n\n\nFloating Cities Kevin MacLeod (incompetech.com)\r\nLicensed
+    under Creative Commons: By Attribution 3.0 License\r\nhttp://creativecommons.org/licenses/by/3.0/\n\n\nDefault
+    Controls (Can be customized):\n \n\t- Jump: Spacebar\n\t- Walk: A/D keys or Left/Right
+    arrow keys.\n\t- Crouch: Left Control\n\t- Run: Left shift"
 --- !u!222 &1059140486
 CanvasRenderer:
   m_ObjectHideFlags: 0
