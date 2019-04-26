@@ -53,7 +53,7 @@ public class SensorGround : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        Debug.Log("Col:" + Time.deltaTime);
+        //Debug.Log("Col:" + Time.deltaTime);
 
         for (int i = 0; i < other.contactCount; i++) {
 

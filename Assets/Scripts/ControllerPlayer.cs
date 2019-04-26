@@ -10,6 +10,8 @@ public class ControllerPlayer : MonoBehaviour
     public SensorGround groundSensorScript;
 
     [Header("Options:")]
+    public bool horizontalMovement;
+    public bool verticalMovement;
     public float walkSpeed;
     public float runSpeedMult;
     public float crouchSpeedMult;
@@ -18,7 +20,8 @@ public class ControllerPlayer : MonoBehaviour
 
     [Header("Debug Options:")]
     public float runAnimTimerLength;
-    public float delayedJumpWindow;
+    public float delayedJumpWindowBefore;
+    public float delayedJumpWindowAfter;
     public float jumpVelocityCutMult;
     public float jumpReloadTime;
 
@@ -28,6 +31,10 @@ public class ControllerPlayer : MonoBehaviour
     float jumpInputDelayTimer;
     float groundeddelayTimer;
     float jumpReloadTimer;
+
+    //bool inputjump;
+
+    //bool j;
 
     // Start is called before the first frame update
     void Start()
@@ -42,18 +49,33 @@ public class ControllerPlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //inputjump = Input.GetButtonDown("Jump");
+        
         //Create input and other relavent variables.
-        float h = Input.GetAxisRaw("Horizontal");
+        float h = horizontalMovement ? Input.GetAxisRaw("Horizontal") : 0;
+        float v = verticalMovement ? Input.GetAxisRaw("Vertical") : 0;
 
         //Is Koa Running/Crouching/Jumping?
         bool r = Input.GetButton("Run");
         bool c = Input.GetButton("Crouch");
 
-        jumpInputDelayTimer = Input.GetButtonDown("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 && Input.GetButton("Jump") ? jumpInputDelayTimer - Time.deltaTime : 0);
+        //jumpInputDelayTimer = Input.GetButtonDown("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 && Input.GetButton("Jump") ? jumpInputDelayTimer - Time.deltaTime : 0);
+
+        if (Input.GetButton("Jump"))
+            jumpInputDelayTimer = delayedJumpWindowBefore;
+        else {
+
+            if (jumpInputDelayTimer > 0 && Input.GetButton("Jump"))
+                jumpInputDelayTimer = jumpInputDelayTimer - Time.deltaTime;
+            else
+                jumpInputDelayTimer = 0;
+
+        }
+
         //jumpInputDelayTimer = Input.GetButton("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
         bool j = jumpInputDelayTimer > 0;
 
-        groundeddelayTimer = groundSensorScript.isGrounded ? delayedJumpWindow : (groundeddelayTimer > 0 ? groundeddelayTimer - Time.deltaTime : 0);
+        groundeddelayTimer = groundSensorScript.isGrounded ? delayedJumpWindowAfter : (groundeddelayTimer > 0 ? groundeddelayTimer - Time.deltaTime : 0);
         bool isGrounded = groundeddelayTimer > 0;
         //bool isGrounded = groundSensorScript.isGrounded;
 
@@ -127,9 +149,13 @@ public class ControllerPlayer : MonoBehaviour
         }
 
         //Should Koa Jump?
-        if (j && isGrounded && jumpReloadTimer <= 0) {
+        if (j)
+            Debug.Log("jumpInputDelayTimer: " + jumpInputDelayTimer);
+        if (j && isGrounded && jumpReloadTimer <= 0)
+        {
 
             //Proceed with jumping!
+            //Debug.Log("Jumped!");
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
             koaAnimator.SetBool("isJumping", true);
 
@@ -139,6 +165,10 @@ public class ControllerPlayer : MonoBehaviour
             jumpInputDelayTimer = 0;
 
             jumpReloadTimer = jumpReloadTime;
+
+        } else if (Input.GetButton("Jump")) {
+
+            print("DEBUG HERE!");
 
         }
 
