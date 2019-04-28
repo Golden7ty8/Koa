@@ -96,7 +96,7 @@ public class ControllerPlayer : MonoBehaviour
         jumpReloadTimer = jumpReloadTimer > 0 ? jumpReloadTimer - Time.deltaTime : 0;
 
         //Move Koa
-        if (h != 0)
+        if (h != 0 || v != 0)
         {
 
             koaAnimator.SetBool("isWalking", true);
@@ -122,7 +122,10 @@ public class ControllerPlayer : MonoBehaviour
                     koaAnimator.SetBool("isCrouching", false);
                 }
             }
-            rb.MovePosition(transform.position + new Vector3(h * walkSpeed * effectiveSpeedMult * Time.deltaTime, 0, 0));
+
+            float dirVectorLength = Mathf.Sqrt(Mathf.Pow(h, 2) + Mathf.Pow(v, 2));
+
+            rb.MovePosition(transform.position + new Vector3(h / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime, 0, v / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime));
 
         }
         else {
@@ -149,8 +152,8 @@ public class ControllerPlayer : MonoBehaviour
         }
 
         //Should Koa Jump?
-        if (j)
-            Debug.Log("jumpInputDelayTimer: " + jumpInputDelayTimer);
+        /*if (j)
+            //Debug.Log("jumpInputDelayTimer: " + jumpInputDelayTimer);*/
         if (j && isGrounded && jumpReloadTimer <= 0)
         {
 
@@ -166,11 +169,11 @@ public class ControllerPlayer : MonoBehaviour
 
             jumpReloadTimer = jumpReloadTime;
 
-        } else if (Input.GetButton("Jump")) {
+        }/* else if (Input.GetButton("Jump")) {
 
             print("DEBUG HERE!");
 
-        }
+        }*/
 
         //If jump is not being held and you have upwards velocity, start cutting that upward velocity.
         if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
