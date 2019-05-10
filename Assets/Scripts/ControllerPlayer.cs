@@ -12,6 +12,7 @@ public class ControllerPlayer : MonoBehaviour
     [Header("Options:")]
     public bool horizontalMovement;
     public bool verticalMovement;
+    public bool rotationalMovement;
     public float walkSpeed;
     public float runSpeedMult;
     public float crouchSpeedMult;
@@ -54,6 +55,7 @@ public class ControllerPlayer : MonoBehaviour
         //Create input and other relavent variables.
         float h = horizontalMovement ? Input.GetAxisRaw("Horizontal") : 0;
         float v = verticalMovement ? Input.GetAxisRaw("Vertical") : 0;
+        float ro = rotationalMovement ? Input.GetAxisRaw("Rotate") : 0;
 
         //Is Koa Running/Crouching/Jumping?
         bool r = Input.GetButton("Run");
@@ -94,6 +96,9 @@ public class ControllerPlayer : MonoBehaviour
 
         //Countdown the time until you can jump again after jumping.
         jumpReloadTimer = jumpReloadTimer > 0 ? jumpReloadTimer - Time.deltaTime : 0;
+
+        //Rotate Koa
+        transform.eulerAngles += new Vector3(0, ro, 0);
 
         //Move Koa
         if (h != 0 || v != 0)
