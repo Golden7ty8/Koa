@@ -8,6 +8,8 @@ public class ControllerPlayer : MonoBehaviour
     public Animator koaAnimator;
     public Rigidbody rb;
     public SensorGround groundSensorScript;
+    public GameObject cameraPivot;
+    public GameObject blackLight;
 
     [Header("Options:")]
     public bool horizontalMovement;
@@ -18,6 +20,7 @@ public class ControllerPlayer : MonoBehaviour
     public float crouchSpeedMult;
     public float jumpHeight;
     public Vector3 spawnPoint;
+    public float rotationalSpeed;
 
     [Header("Debug Options:")]
     public float runAnimTimerLength;
@@ -98,7 +101,10 @@ public class ControllerPlayer : MonoBehaviour
         jumpReloadTimer = jumpReloadTimer > 0 ? jumpReloadTimer - Time.deltaTime : 0;
 
         //Rotate Koa
-        transform.eulerAngles += new Vector3(0, ro, 0);
+        cameraPivot.transform.eulerAngles += new Vector3(0, ro * Time.deltaTime * rotationalSpeed, 0);
+
+        //Set rotation
+        transform.eulerAngles = new Vector3(0, cameraPivot.transform.eulerAngles.y + (dir ? 0 : 180), 0);
 
         //Move Koa
         if (h != 0 || v != 0)
@@ -130,7 +136,7 @@ public class ControllerPlayer : MonoBehaviour
 
             float dirVectorLength = Mathf.Sqrt(Mathf.Pow(h, 2) + Mathf.Pow(v, 2));
 
-            rb.MovePosition(transform.position + new Vector3(h / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime, 0, v / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime));
+            rb.MovePosition(transform.position + transform.TransformDirection(new Vector3(h / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime * (dir ? 1 : -1), 0, v / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime * (dir ? 1 : -1))));
 
         }
         else {
@@ -147,9 +153,6 @@ public class ControllerPlayer : MonoBehaviour
                 koaAnimator.SetBool("isCrouching", false);
             }
         }
-
-        //Set rotation
-        transform.eulerAngles = new Vector3(0, dir ? 0 : 180, 0);
 
         //Turn off Jumping animation upon landing.
         if (groundSensorScript.isGrounded) {
