@@ -20,7 +20,7 @@ public class ControllerPlayer : MonoBehaviour
     public float crouchSpeedMult;
     public float jumpHeight;
     public Vector3 spawnPoint;
-    public float rotationalSpeed;
+    public float rotationaljumpAngle;
 
     [Header("Debug Options:")]
     public float runAnimTimerLength;
@@ -48,6 +48,12 @@ public class ControllerPlayer : MonoBehaviour
         jumpInputDelayTimer = 0;
         groundeddelayTimer = 0;
         jumpReloadTimer = 0;
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("LightToggle"))
+            blackLight.SetActive(!blackLight.activeSelf);
     }
 
     // Update is called once per frame
@@ -101,7 +107,8 @@ public class ControllerPlayer : MonoBehaviour
         jumpReloadTimer = jumpReloadTimer > 0 ? jumpReloadTimer - Time.deltaTime : 0;
 
         //Rotate Koa
-        cameraPivot.transform.eulerAngles += new Vector3(0, ro * Time.deltaTime * rotationalSpeed, 0);
+        if(Input.GetButtonDown("Rotate"))
+            cameraPivot.transform.eulerAngles += new Vector3(0, Mathf.Round(ro) * rotationaljumpAngle, 0);
 
         //Set rotation
         transform.eulerAngles = new Vector3(0, cameraPivot.transform.eulerAngles.y + (dir ? 0 : 180), 0);
