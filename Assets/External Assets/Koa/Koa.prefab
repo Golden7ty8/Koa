@@ -1073,13 +1073,17 @@ MonoBehaviour:
   koaAnimator: {fileID: 2052962251754277468}
   rb: {fileID: 2052962250632133988}
   groundSensorScript: {fileID: 413162642}
+  cameraPivot: {fileID: 0}
+  blackLight: {fileID: 0}
   horizontalMovement: 1
   verticalMovement: 1
+  rotationalMovement: 0
   walkSpeed: 10
   runSpeedMult: 1.4
   crouchSpeedMult: 0.6
   jumpHeight: 15
   spawnPoint: {x: 0, y: 13, z: 0}
+  rotationaljumpAngle: 0
   runAnimTimerLength: 0.08
   delayedJumpWindowBefore: 0.2
   delayedJumpWindowAfter: 0.2
