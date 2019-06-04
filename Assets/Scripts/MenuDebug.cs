@@ -19,6 +19,7 @@ public class MenuDebug : MonoBehaviour
     public GameObject inputPlaceholder;
     public GameObject debugGroup;
     public ControllerPlayer controllerPlayer;
+    public BatteryLifeManager batteryLifeManager;
 
     [Header("Options:")]
     //public bool inputStyle;
@@ -26,18 +27,20 @@ public class MenuDebug : MonoBehaviour
 
     int optionCount;
     int index;
-    float jumpHeightDefault, walkSpeedDefault, runSpeedMultDefault, crouchSpeedMultDefault;
+    float jumpHeightDefault, walkSpeedDefault, runSpeedMultDefault, crouchSpeedMultDefault, batteryDrainRateDefault, batteryRechargeRateDefault;
 
     // Start is called before the first frame update
     void Start()
     {
-        optionCount = 4;
+        optionCount = 6;
         index = 0;
 
         jumpHeightDefault = controllerPlayer.jumpHeight;
         walkSpeedDefault = controllerPlayer.walkSpeed;
         runSpeedMultDefault = controllerPlayer.runSpeedMult;
         crouchSpeedMultDefault = controllerPlayer.crouchSpeedMult;
+        batteryDrainRateDefault = batteryLifeManager.drainRate;
+        batteryRechargeRateDefault = batteryLifeManager.rechargeRate;
 
         //inputDisplay.SetActive(inputStyle);
     }
@@ -198,6 +201,16 @@ public class MenuDebug : MonoBehaviour
                 tmp.name = "Crouch Speed Multiplier";
                 tmp.defaultValue = crouchSpeedMultDefault;
                 return tmp;
+            case 4:
+                tmp.value = batteryLifeManager.drainRate;
+                tmp.name = "Blacklight Drain Rate";
+                tmp.defaultValue = batteryDrainRateDefault;
+                return tmp;
+            case 5:
+                tmp.value = batteryLifeManager.rechargeRate;
+                tmp.name = "Blacklight Recharge Rate";
+                tmp.defaultValue = batteryRechargeRateDefault;
+                return tmp;
 
             default:
                 tmp.name = "ERROR";
@@ -271,6 +284,26 @@ public class MenuDebug : MonoBehaviour
                 controllerPlayer.crouchSpeedMult += amount;
                 //controllerPlayer.crouchSpeedMult -= controllerPlayer.cr % 0.1f;
                 controllerPlayer.crouchSpeedMult = Mathf.Round(controllerPlayer.crouchSpeedMult * 10) / 10;
+                break;
+            case 4:
+                if (setDefault)
+                    amount = batteryDrainRateDefault;
+                if (!additive)
+                    amount -= batteryLifeManager.drainRate;
+                batteryLifeManager.drainRate += amount;
+                //controllerPlayer.crouchSpeedMult -= controllerPlayer.cr % 0.1f;
+                if(additive)
+                    batteryLifeManager.drainRate = Mathf.Round(controllerPlayer.crouchSpeedMult * 10) / 10;
+                break;
+            case 5:
+                if (setDefault)
+                    amount = batteryRechargeRateDefault;
+                if (!additive)
+                    amount -= batteryLifeManager.rechargeRate;
+                batteryLifeManager.rechargeRate += amount;
+                //controllerPlayer.crouchSpeedMult -= controllerPlayer.cr % 0.1f;
+                if(additive)
+                    batteryLifeManager.rechargeRate = Mathf.Round(controllerPlayer.crouchSpeedMult * 10) / 10;
                 break;
 
         }
