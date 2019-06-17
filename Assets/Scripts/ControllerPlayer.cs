@@ -15,6 +15,7 @@ public class ControllerPlayer : MonoBehaviour
     public bool horizontalMovement;
     public bool verticalMovement;
     public bool rotationalMovement;
+    //public bool useMenuControls;
     public float walkSpeed;
     public float runSpeedMult;
     public float crouchSpeedMult;
@@ -48,6 +49,12 @@ public class ControllerPlayer : MonoBehaviour
         jumpInputDelayTimer = 0;
         groundeddelayTimer = 0;
         jumpReloadTimer = 0;
+
+        //if (useMenuControls) {
+
+            //Override untiy's inputs (Input.SetAxis("Vertical") = w, s)
+
+        //}
     }
 
     void Update()
@@ -62,7 +69,8 @@ public class ControllerPlayer : MonoBehaviour
         //inputjump = Input.GetButtonDown("Jump");
         
         //Create input and other relavent variables.
-        float h = horizontalMovement ? Input.GetAxisRaw("Horizontal") : 0;
+        //float h = horizontalMovement ? Input.GetAxisRaw("Horizontal") : 0;
+        float h = horizontalMovement ? Input.GetKey(PlayerPrefs.GetString("walk_right")) : 0;
         float v = verticalMovement ? Input.GetAxisRaw("Vertical") : 0;
         float ro = rotationalMovement ? Input.GetAxisRaw("Rotate") : 0;
 

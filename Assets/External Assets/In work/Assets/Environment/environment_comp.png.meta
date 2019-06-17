@@ -1,0 +1,930 @@
+fileFormatVersion: 2
+guid: ca42cdbe28ef65d408071aacf7be561c
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Wave
+    21300002: environment_comp_1
+    21300004: Koa
+    21300006: Wave_Border
+    21300008: Seaweed_1
+    21300010: Seaweed_3
+    21300012: Seawee_4
+    21300014: bush_little
+    21300016: Red_plant
+    21300018: Red_plant_large
+    21300020: Red_plant_2
+    21300022: Seaweed_2
+    21300024: White_plant
+    21300026: Crystal
+    21300028: bush_large
+    21300030: Stalactite_large
+    21300032: Pink_plant
+    21300034: Stalactite_little_1
+    21300036: Stalactite_little_2
+    21300038: Stalactite_little_3
+    21300040: Stalagmite_large
+    21300042: Stalagmite_little_1
+    21300044: Stalactite_little_5
+    21300046: Stalagmite_little_2
+    21300048: Stalagmite_little_3
+    21300050: Rock_little_1
+    21300052: environment_comp_28
+    21300054: Cloud_1
+    21300056: Cloud_2
+    21300058: Rock_little_3
+    21300060: Rock_little_4
+    21300062: Cloud_3
+    21300064: Cloud_4
+    21300066: Pink_Nice_plant
+    21300068: Red_Nice_plant
+    21300070: Green_Nice_plant
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Wave
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 960
+        width: 309
+        height: 75
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cc1337e663df64c803b6b334a9f7cf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_comp_1
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 968
+        width: 143
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cad10bb08655824ba30dd3d31e480cc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Koa
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 815
+        width: 98
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ecaa4f0681b3b34aa9d306495b4454a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wave_Border
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 845
+        width: 315
+        height: 81
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5759e4f7a35de5f48a45e74b6a6b31b5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seaweed_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 688
+        width: 29
+        height: 235
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0d3eff60e0a2704c9a6d0a7d06cf9c0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seaweed_3
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 689
+        width: 25
+        height: 196
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bd01712567b0c4a9008688119136f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seawee_4
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 689
+        width: 26
+        height: 170
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6d35d5d25ed1d4199b544b9e040956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bush_little
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 689
+        width: 91
+        height: 137
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d957aa816c60f7c4cbb6960d8145cb74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_plant
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 688
+        width: 69
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e010b970274d1b640b87dc4693f319b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_plant_large
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 688
+        width: 134
+        height: 146
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb669d91f5ceb694882cd4bdf38648c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_plant_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 687
+        width: 62
+        height: 147
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4875061d6e1a87842b76be875b54ac96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Seaweed_2
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 688
+        width: 34
+        height: 153
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b19e5e39b7a446547a9a85ec49806197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White_plant
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 687
+        width: 91
+        height: 86
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce741555f25b6344a7f4e4def9c59bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crystal
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 694
+        width: 96
+        height: 144
+      alignment: 9
+      pivot: {x: 0.5, y: 0.07}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a8192b5282b0c4db67657e413cb73e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bush_large
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 238
+        width: 109
+        height: 416
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b09d93240cb1d4cbfeb2ee3bdfcd08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalactite_large
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 422
+        width: 241
+        height: 205
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868bb6442e938a24fa5ec53902bcf4b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pink_plant
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 586
+        width: 93
+        height: 104
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3137886b0c1e1884e90696a01c0e7b4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalactite_little_1
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 426
+        width: 62
+        height: 152
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be26cf7c148f1834e92ca55d89d13ec3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalactite_little_2
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 432
+        width: 75
+        height: 150
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5272296a41e91142bf0fb93b82b5e81
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalactite_little_3
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 447
+        width: 56
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5, y: 0.9}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f4a31ca1fa92649ae426d51981e298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagmite_large
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 271
+        width: 235
+        height: 133
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 714e976237f028c4bbed4a528b67105e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagmite_little_1
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 322
+        width: 62
+        height: 99
+      alignment: 9
+      pivot: {x: 0.5, y: 0.05}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45186d03460dee243a55b82be77ddca7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalactite_little_5
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 317
+        width: 24
+        height: 75
+      alignment: 9
+      pivot: {x: 0.5, y: 0.92}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5a27d71b7ff51469858fb104b6d218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagmite_little_2
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 326
+        width: 36
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1a2b5bc9a6ae14e9bb7d2bffe18818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stalagmite_little_3
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 325
+        width: 32
+        height: 64
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fc7dc4548f99f64d9279a540f0cddaa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_little_1
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 166
+        width: 92
+        height: 99
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d89f225ec9ebd4db4f5aef324e7c0f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: environment_comp_28
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 163
+        width: 123
+        height: 97
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfdf6736bfbd1f43a4db5077fae0bc3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_1
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 185
+        width: 140
+        height: 115
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcea237260175834998b2911033964a5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_2
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 185
+        width: 126
+        height: 113
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff0c4c7e38c1f04bb8f466bd8a6d0e1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_little_3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 39
+        width: 98
+        height: 109
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3542930c6adb39c4abf6715937666a67
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rock_little_4
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 49
+        width: 119
+        height: 93
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faca154755223314fb4e61b99a383bd9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_3
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 68
+        width: 133
+        height: 98
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdcd842abca6ff5468b6eb585a320daa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud_4
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 50
+        width: 130
+        height: 117
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d558cf02a0f2abb40a8dd4817090bc69
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pink_Nice_plant
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 117
+        height: 144
+      alignment: 9
+      pivot: {x: 0.35, y: 0.06}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -37.5, y: -69}
+        - {x: -37.5, y: -69}
+        - {x: -49.5, y: -35}
+        - {x: -58.5, y: -7}
+        - {x: -58.5, y: 12}
+        - {x: -36.5, y: 71}
+        - {x: 26.5, y: 72}
+        - {x: 52.5, y: 69}
+        - {x: 58.5, y: 30}
+        - {x: 58.5, y: 12}
+        - {x: 36.5, y: -9}
+        - {x: 19.5, y: -25}
+        - {x: 38.5, y: -31}
+        - {x: 45.5, y: -41}
+        - {x: 37.5, y: -52}
+        - {x: 19.5, y: -51}
+        - {x: 6.5, y: -62}
+        - {x: -8.5, y: -71}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73c8981c15995f4bbb3a8dfde7987ca
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_Nice_plant
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 4
+        width: 126
+        height: 103
+      alignment: 9
+      pivot: {x: 0.63, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 3, y: -51.5}
+        - {x: -4, y: -49.5}
+        - {x: -38, y: -35.5}
+        - {x: -61, y: -25.5}
+        - {x: -63, y: -13.5}
+        - {x: -41, y: 33.5}
+        - {x: -17, y: 51.5}
+        - {x: 21, y: 51.5}
+        - {x: 38, y: 43.5}
+        - {x: 40, y: 26.5}
+        - {x: 63, y: -14.5}
+        - {x: 61, y: -24.5}
+        - {x: 32, y: -29.5}
+        - {x: 29, y: -44.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f4d94a2d0203a4eaed84cc6bbdd5a0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green_Nice_plant
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 73
+        width: 107
+        height: 153
+      alignment: 9
+      pivot: {x: 0.63, y: 0.02}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 10.5, y: -76.5}
+        - {x: 10.5, y: -68.5}
+        - {x: 30.5, y: -33.5}
+        - {x: 4.5, y: -6.5}
+        - {x: -15.5, y: -3.5}
+        - {x: -37.5, y: 11.5}
+        - {x: -43.5, y: 32.5}
+        - {x: -50.5, y: 58.5}
+        - {x: -51.5, y: 72.5}
+        - {x: -33.5, y: 76.5}
+        - {x: -7.5, y: 57.5}
+        - {x: 0.5, y: 75.5}
+        - {x: 14.5, y: 76.5}
+        - {x: 38.5, y: 56.5}
+        - {x: 53.5, y: 36.5}
+        - {x: 51.5, y: 18.5}
+        - {x: 43.5, y: 12.5}
+        - {x: 41.5, y: -0.5}
+        - {x: 41.5, y: -29.5}
+        - {x: 35.5, y: -53.5}
+        - {x: 17.5, y: -75.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2209bd4fb0b9445abd32a55bbc5d06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 08825ae8e8254bd4b85614a5df018e04
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

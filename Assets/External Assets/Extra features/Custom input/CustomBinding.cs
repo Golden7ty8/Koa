@@ -1,14 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
+using System;
+using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
 public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
-    public GameObject BindingInfo;
-    public Text bindedForInfo;
+    [Header("Automatic")]
+    public GameObject bindingPanel;
+    public Text bindedToKey;
+    public KeyCode escapeBinding;
+
+    [Header("To set")]
     public Text nameBind;
     private string actor;
 
@@ -18,15 +22,20 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private bool waitClear = false;
 
-    void Start()
-    {
+    void Start() {
         gameObject.GetComponentInChildren<Text>().text = PlayerPrefs.GetString(inputToBindTo);
+        if(PlayerPrefs.GetString(inputToBindTo) == "") {
+            gameObject.GetComponentInChildren<Text>().text = "None";
+        }
         currentBind = PlayerPrefs.GetString(inputToBindTo);
+
+        bindingPanel = BindingInfo.bindingInfo_instance.bindingPanel;
+        bindedToKey = BindingInfo.bindingInfo_instance.bindedToKey;
+        escapeBinding = BindingInfo.bindingInfo_instance.escapeBinding;
     }
 
-    public void newBinding()
-    {
-        BindingInfo.SetActive(true);
+    public void newBinding() {
+        bindingPanel.SetActive(true);
         if (Input.GetMouseButtonUp(0))
         {
             setBindingActor();
@@ -38,12 +47,19 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         }
     }
 
-    IEnumerator waitCustomBinding()
-    {
+    IEnumerator waitCustomBinding() {
         yield return new WaitForFixedUpdate();
         //Debug.Log("Wait Binding !");
         foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
         {
+            //Cancel
+            if (Input.GetKeyDown(escapeBinding))
+            {
+                setBinding = true;
+                bindingPanel.SetActive(false);
+                Debug.Log("Cancel Binding");
+                yield break;
+            }
             //Set Binding
             if (Input.GetKeyDown(kcode) && setBinding == false)
             {
@@ -54,14 +70,7 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 PlayerPrefs.SetString(inputToBindTo, currentBind);
                 gameObject.GetComponentInChildren<Text>().text = PlayerPrefs.GetString(inputToBindTo);
                 setBinding = true;
-                BindingInfo.SetActive(false);
-            }
-            //Cancel
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                setBinding = true;
-                BindingInfo.SetActive(false);
-                Debug.Log("Cancel Binding");
+                bindingPanel.SetActive(false);
             }
         }
         if (setBinding == false)
@@ -73,7 +82,7 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void setBindingActor() {
         actor = nameBind.text;
-        bindedForInfo.text = " \" " + actor + " \""; 
+        bindedToKey.text = " \" " + actor + " \""; 
     }
 
 
@@ -83,8 +92,7 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         waitClear = true;
     }
 
-    public void OnPointerExit(PointerEventData pointerEventData)
-    {
+    public void OnPointerExit(PointerEventData pointerEventData) {
         Debug.Log("Exit clear binding");
         waitClear = false;
     }
@@ -97,6 +105,10 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             Debug.Log("Binding cleared");
             
             waitClear = false;
+        }
+
+        if(PlayerPrefs.GetString(inputToBindTo) != gameObject.GetComponentInChildren<Text>().text) {
+            gameObject.GetComponentInChildren<Text>().text = PlayerPrefs.GetString(inputToBindTo);
         }
     }
 
