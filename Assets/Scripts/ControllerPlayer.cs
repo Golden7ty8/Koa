@@ -70,8 +70,9 @@ public class ControllerPlayer : MonoBehaviour
         
         //Create input and other relavent variables.
         //float h = horizontalMovement ? Input.GetAxisRaw("Horizontal") : 0;
-        float h = horizontalMovement ? Input.GetKey(PlayerPrefs.GetString("walk_right")) : 0;
-        float v = verticalMovement ? Input.GetAxisRaw("Vertical") : 0;
+        float h = horizontalMovement ? (Input.GetKey(PlayerPrefs.GetString("walk_right").ToLower()) ? 1 : 0) - (Input.GetKey(PlayerPrefs.GetString("walk_left").ToLower()) ? 1 : 0) : 0;
+        //float v = verticalMovement ? Input.GetAxisRaw("Vertical") : 0;
+        float v = verticalMovement ? (Input.GetKey(PlayerPrefs.GetString("walk_forward").ToLower()) ? 1 : 0) - (Input.GetKey(PlayerPrefs.GetString("walk_back").ToLower()) ? 1 : 0) : 0;
         float ro = rotationalMovement ? Input.GetAxisRaw("Rotate") : 0;
 
         //Is Koa Running/Crouching/Jumping?
