@@ -58,10 +58,10 @@
 	{"key":"extra_extra","value":"EXTRA"},
 	{"key":"extra_changelog","value":"CHANGEMENTS"},
 		{"key":"changelog_close","value":"FERMER"},
-		{"key":"changelog_patchVersion_1.0.0","value":"MISE À JOUR 1.0.0"},
+		{"key":"changelog_patchVersion_1.0.0","value":"MISE À JOUR 0.0.4.0 - Le Menu et Amélioré Lumière noire mise à jour"},
 		{"key":"changelog_patchDate_0.0.0","value":"00/05/2019"},
-		{"key":"changelog_patchDate_1.0.0","value":"18/05/2019"},
-		{"key":"changelog_patchInfo_1.0.0","value":"<color=#ff9900><b>MISE À JOUR DES MENUS</b></color>\n•Ajout du menu principal et des options\n<i>Note : Les menus peuvent encore changer et les options sont encore en développement</i>\n•Ajout de l'écran de chargement\n•Ajout du menu pause\n•Les contrôles dans les options ont maintenat un bien meilleur système !\n<color=#00CFFF>Un problème ? Vous pouvez maintenant rejoindre directement notre serveur Discord en bas à droite du menu principal si vous n'y êtes pas déjà ! :)</color>"},
+		{"key":"changelog_patchDate_1.0.0","value":"6/24/2019"},
+		{"key":"changelog_patchInfo_1.0.0","value":"Oui je sais bien que ce menu ne peut pas défiler vers le bas au moment, on y travaille :P.\n<color=#ff9900><b>MISE À JOUR DES MENUS:</b></color>\n•Ajout du menu principal et des options.\n<i>Note : Les menus peuvent encore changer et les options sont encore en développement.</i>\n•Ajout de l'écran de chargement.\n•Les contrôles peuvent maintenant être changé du menu options!\n<color=#ff9900><b>MISE À JOUR DU JEU:</b></color>\n•Réparé les collisions des autel piliers (lol!).\n•Ajout d'une collisionneur en haut du altar.\n•Ajout d'un compteur pour la batterie de la lumière noire.\n•Ajouté des nouvelles variables aux menu déboguer.\n•Ajouté une texture au lumière noire.\n•Fait sur que la lumière noire révéle seulement ce qu'il y a dans la vue de la lumière.\n•Changé le niveau pour 2D seulement.\n<color=#00CFFF>Un problème? Vous pouvez maintenant rejoindre directement notre serveur Discord en bas à droite du menu principal si vous n'y êtes pas déjà ! :)</color>"},
 	
 	{"key":"extra_credits","value":"CRÉDITS"},
 

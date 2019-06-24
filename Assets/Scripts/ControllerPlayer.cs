@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ControllerPlayer : MonoBehaviour
@@ -59,33 +61,48 @@ public class ControllerPlayer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("LightToggle"))
+        //if (Input.GetButtonDown("LightToggle"))
+        if (Input.GetKeyDown(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("black_light")).ToLower()))
             blackLight.SetActive(!blackLight.activeSelf);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //KeyCode thisKeyCode = (KeyCode)System.Enum.Parse(typeof(KeyCode), "Whatever");
+
         //inputjump = Input.GetButtonDown("Jump");
-        
+
         //Create input and other relavent variables.
         //float h = horizontalMovement ? Input.GetAxisRaw("Horizontal") : 0;
-        float h = horizontalMovement ? (Input.GetKey(PlayerPrefs.GetString("walk_right").ToLower()) ? 1 : 0) - (Input.GetKey(PlayerPrefs.GetString("walk_left").ToLower()) ? 1 : 0) : 0;
+        //float h = horizontalMovement ? (Input.GetKey(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("walk_right")).ToLower()) ? 1 : 0) - (Input.GetKey(PlayerPrefs.GetString("walk_left").ToLower()) ? 1 : 0) : 0;
+        float h = horizontalMovement ? (Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("walk_right"))) ? 1 : 0) - (Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("walk_left"))) ? 1 : 0) : 0;
+        
         //float v = verticalMovement ? Input.GetAxisRaw("Vertical") : 0;
-        float v = verticalMovement ? (Input.GetKey(PlayerPrefs.GetString("walk_forward").ToLower()) ? 1 : 0) - (Input.GetKey(PlayerPrefs.GetString("walk_back").ToLower()) ? 1 : 0) : 0;
+        //float v = verticalMovement ? (Input.GetKey(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("walk_forward")).ToLower()) ? 1 : 0) - (Input.GetKey(PlayerPrefs.GetString("walk_back").ToLower()) ? 1 : 0) : 0;
+        float v = verticalMovement ? (Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("walk_forward"))) ? 1 : 0) - (Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("walk_back"))) ? 1 : 0) : 0;
+
         float ro = rotationalMovement ? Input.GetAxisRaw("Rotate") : 0;
 
         //Is Koa Running/Crouching/Jumping?
-        bool r = Input.GetButton("Run");
-        bool c = Input.GetButton("Crouch");
+        //bool r = Input.GetButton("Run");
+        //bool r = Input.GetKey(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("run")).ToLower());
+        bool r = Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("run")));
+        
+        //bool c = Input.GetButton("Crouch");
+        //bool c = Input.GetKey(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("crouch")).ToLower());
+        bool c = Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("crouch")));
 
         //jumpInputDelayTimer = Input.GetButtonDown("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 && Input.GetButton("Jump") ? jumpInputDelayTimer - Time.deltaTime : 0);
 
-        if (Input.GetButton("Jump"))
+        //if (Input.GetButton("Jump"))
+        //if (Input.GetKey(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("jump")).ToLower()))
+        bool j = Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jump")));
+        if (j)
             jumpInputDelayTimer = delayedJumpWindowBefore;
         else {
 
-            if (jumpInputDelayTimer > 0 && Input.GetButton("Jump"))
+            if (jumpInputDelayTimer > 0 && j)
                 jumpInputDelayTimer = jumpInputDelayTimer - Time.deltaTime;
             else
                 jumpInputDelayTimer = 0;
@@ -93,7 +110,7 @@ public class ControllerPlayer : MonoBehaviour
         }
 
         //jumpInputDelayTimer = Input.GetButton("Jump") ? delayedJumpWindow : (jumpInputDelayTimer > 0 ? jumpInputDelayTimer - Time.deltaTime : 0);
-        bool j = jumpInputDelayTimer > 0;
+        bool jTimer = jumpInputDelayTimer > 0;
 
         groundeddelayTimer = groundSensorScript.isGrounded ? delayedJumpWindowAfter : (groundeddelayTimer > 0 ? groundeddelayTimer - Time.deltaTime : 0);
         bool isGrounded = groundeddelayTimer > 0;
@@ -178,7 +195,7 @@ public class ControllerPlayer : MonoBehaviour
         //Should Koa Jump?
         /*if (j)
             //Debug.Log("jumpInputDelayTimer: " + jumpInputDelayTimer);*/
-        if (j && isGrounded && jumpReloadTimer <= 0)
+        if (jTimer && isGrounded && jumpReloadTimer <= 0)
         {
 
             //Proceed with jumping!
