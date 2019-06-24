@@ -62,7 +62,8 @@ public class ControllerPlayer : MonoBehaviour
     void Update()
     {
         //if (Input.GetButtonDown("LightToggle"))
-        if (Input.GetKeyDown(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("black_light")).ToLower()))
+        //if (Input.GetKeyDown(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("black_light")).ToLower()))
+        if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("black_light"))))
             blackLight.SetActive(!blackLight.activeSelf);
     }
 
