@@ -1,0 +1,19 @@
+﻿{"items":[
+
+{"key":"language","value":"English"},
+
+{"key":"Changelog","value":"CHANGELOG"},
+{"key":"Close","value":"CLOSE"},
+
+{"key":"Update_1.0.0","value":"UPDATE 1.0.0"},
+	{"key":"UpdateTitle_1.0.0","value":"UPDATE TITLE"},
+	{"key":"UpdateInfo_1.0.0","value":"UPDATE MESSAGE"},
+	{"key":"changelog_1.0.0","value":"-Update"},
+
+{"key":"Update_0.0.4.0","value":"UPDATE 0.0.4.0"},
+	{"key":"UpdateTitle_0.0.4.0","value":"UPDATE TITLE"},
+	{"key":"UpdateInfo_0.0.4.0","value":"UPDATE MESSAGE"},
+
+{"key":"changelogContent","value":"CHANGELOG CONTENT 0.0.4.0"}
+
+]}

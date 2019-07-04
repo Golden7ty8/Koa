@@ -10,9 +10,9 @@ public class GameUI : MonoBehaviour {
 
     public void LateUpdate() {
 
-        if(Input.GetKeyDown(GameCore_Controls.gameCore_Controls_instance.PauseMenu)) {
-            togglePauseMenu();
-        }
+        //if(Input.GetKeyDown(GameCore_Controls.gameCore_Controls_instance.PauseMenu)) {
+        //    togglePauseMenu();
+        //}
 
     }
 

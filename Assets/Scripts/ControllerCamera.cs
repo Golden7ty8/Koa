@@ -7,12 +7,12 @@ public class ControllerCamera : MonoBehaviour
     [Tooltip("The thing the camera is following.")]
     public GameObject viewSubject;
 
-    Vector3 posOffset/*, rotOffset*/;
+    public Vector3 posOffset/*, rotOffset*/;
 
     // Start is called before the first frame update
     void Start()
     {
-        posOffset = transform.position - viewSubject.transform.position;
+        //posOffset = transform.position - viewSubject.transform.position;
         //rotOffset = transform.eulerAngles - viewSubject.transform.eulerAngles;
     }
 
