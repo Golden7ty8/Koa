@@ -38447,7 +38447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 413162637, guid: e6f82ebee70c31147a0d5686ed2eeb38, type: 3}
       propertyPath: useStartPoint
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413162637, guid: e6f82ebee70c31147a0d5686ed2eeb38, type: 3}
+      propertyPath: useSpawnPoint
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2052962250632133991, guid: e6f82ebee70c31147a0d5686ed2eeb38,
         type: 3}
