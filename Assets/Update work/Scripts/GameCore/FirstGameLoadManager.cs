@@ -12,22 +12,21 @@ public class FirstGameLoadManager : MonoBehaviour {
 
     [Header("Game cores")]
     [SerializeField]
-    private GameObject AdvancedStatsManagerObject;
+    private GameObject AdvancedGameUIObject;
 
     private void Start() {
 
         Debug.Log("<color=red>Start of the game Cores loading</color>");
         //Load the game in the order
-        AdvancedStatsManagerObject.GetComponent<AdvancedStatsManager>().Load();
+        AdvancedGameUIObject.GetComponent<AdvancedGameUI>().Load();
 
         StartCoroutine(LoadAdvancedStats());
         
     }
 
     private IEnumerator LoadAdvancedStats() {
-        Debug.Log("A");
 
-        yield return new WaitUntil(() => AdvancedStatsManager.instance.CheckIfReady() == true);
+        yield return new WaitUntil(() => AdvancedGameUI.instance.CheckIfReady() == true);
 
         Debug.Log("<color=red>- [1/" + numberOfStates + "] AdvancedStatsManager ready </color>");
         GameCore_Main.instance.GetComponent<GameCore_Video>().Load();

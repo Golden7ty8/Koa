@@ -24,6 +24,9 @@ public class Options_Video : MonoBehaviour {
     private GameObject customLimitFPSObject;
     [SerializeField]
     private InputField customLimitFPSInputField;
+    //Achievement notification
+    [SerializeField]
+    private Toggle achievementNotification;
 
     [Header("Advanced stats")]
     //Advanced stats
@@ -91,9 +94,17 @@ public class Options_Video : MonoBehaviour {
             customLimitFPSObject.SetActive(true);
         }
 
+        //Achievement notification
+        if (PlayerPrefs.GetInt("video_achievementNotification") == 1) {
+            achievementNotification.isOn = true;
+        }
+        else {
+            achievementNotification.isOn = false;
+        }
+
         //Advanced stats
         //Show framerates
-        if(PlayerPrefs.GetString("video_ShowFramerates") == "true") {
+        if (PlayerPrefs.GetString("video_ShowFramerates") == "true") {
             showFrameratesToggle.isOn = true;
         }
         else {
@@ -166,6 +177,16 @@ public class Options_Video : MonoBehaviour {
     }
     #endregion
 
+    //Achievement notification
+    public void SetAchievementNotification(bool show) {
+        if (show) {
+            PlayerPrefs.SetInt("video_achievementNotification", 1);
+        }
+        else {
+            PlayerPrefs.SetInt("video_achievementNotification", 0);
+        }
+    }
+
     //Advanced stats
     #region
     //Show framerates
@@ -176,7 +197,7 @@ public class Options_Video : MonoBehaviour {
         else {
             PlayerPrefs.SetString("video_ShowFramerates", "false");
         }
-        AdvancedStatsManager.instance.GetComponent<AdvancedStatsManager>().UpdateAdvancedStatsUI();
+        AdvancedGameUI.instance.GetAdvancedStatsManager().UpdateAdvancedStatsUI();
     }
 
     //Show system clock
@@ -187,7 +208,7 @@ public class Options_Video : MonoBehaviour {
         else {
             PlayerPrefs.SetString("video_ShowSystemClock", "false");
         }
-        AdvancedStatsManager.instance.GetComponent<AdvancedStatsManager>().UpdateAdvancedStatsUI();
+        AdvancedGameUI.instance.GetAdvancedStatsManager().UpdateAdvancedStatsUI();
     }
     #endregion
 

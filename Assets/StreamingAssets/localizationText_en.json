@@ -28,6 +28,7 @@
 		{"key":"Options_Video_Resolution","value":"RESOLUTION"},
 		{"key":"Options_Video_LimitFPS","value":"LIMIT FPS"},
 			{"key":"Options_Video_CustomLimitFPS","value":"CUSTOM LIMIT FPS"},
+			{"key":"Options_Video_AchievementNotification","value":"ACHIEVEMENT NOTIFICATION"},
 		{"key":"Options_Video_AdvancedStats","value":"ADVANCED STATS"},
 			{"key":"Options_Video_AdvancedStats_Framerate","value":"FRAMERATE"},
 			{"key":"Options_Video_AdvancedStats_SystemClock","value":"SYSTEM CLOCK"},
@@ -57,6 +58,11 @@
 			{"key":"Options_Controls_Abilities_DarkLight","value":"DARK LIGHT"},
 
 {"key":"Achievements","value":"Achievemnets"},
+	{"key":"Achievements_Title","value":"ACHIEVEMENTS"},
+		{"key":"achievement_Hidden_Title","value":"HIDDEN"},
+			{"key":"achievement_Hidden_Description","value":"YOU NEED TO COMPLETE THE ACHIEVEMENT BEFORE"},
+		{"key":"achievement_LaunchTheGame","value":"LAUNCH THE GAME"},
+			{"key":"achievement_LaunchTheGame_Description","value":"JUST LAUNCH THE GAME"},
 
 {"key":"Extra","value":"Extra"},
 	{"key":"Changelog","value":"CHANGELOG"},

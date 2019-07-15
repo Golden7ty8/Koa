@@ -24,6 +24,9 @@ public class ControllerPlayer : MonoBehaviour
     public float jumpHeight;
     public Vector3 spawnPoint;
     public float rotationaljumpAngle;
+    public Vector3 startPoint;
+    public bool useStartPoint;
+    public bool useSpawnPoint;
 
     [Header("Debug Options:")]
     public float runAnimTimerLength;
@@ -51,6 +54,11 @@ public class ControllerPlayer : MonoBehaviour
         jumpInputDelayTimer = 0;
         groundeddelayTimer = 0;
         jumpReloadTimer = 0;
+
+        if(useStartPoint)
+            transform.position = startPoint;
+        if (!useSpawnPoint)
+            spawnPoint = transform.position;
 
         //if (useMenuControls) {
 

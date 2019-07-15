@@ -3,10 +3,10 @@ using UnityEngine.UI;
 
 public class AdvancedStatsManager : MonoBehaviour {
 
-    public static AdvancedStatsManager instance;
+    //public static AdvancedStatsManager instance;
 
-    [SerializeField]
-    public bool isReady = false;
+    //[SerializeField]
+    //public bool isReady = false;
 
     [SerializeField]
     private GameObject showFrameratesObject;
@@ -17,7 +17,7 @@ public class AdvancedStatsManager : MonoBehaviour {
     [SerializeField]
     private Text systemClockCounter;
 
-    public void Load() {
+    /*public void Load() {
         if(AdvancedStatsManager.instance == null) {
             instance = this;
             DontDestroyOnLoad(this);
@@ -34,7 +34,7 @@ public class AdvancedStatsManager : MonoBehaviour {
             return true;
         }
         return false;
-    }
+    }*/
 
     //Update advanced stats UI
     public void UpdateAdvancedStatsUI() {

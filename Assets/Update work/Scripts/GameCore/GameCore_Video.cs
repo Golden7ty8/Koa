@@ -23,6 +23,8 @@ public class GameCore_Video : MonoBehaviour {
         PlayerPrefs.GetInt("video_LimitFPSIndex", 0);
         PlayerPrefs.SetInt("video_LimitFPS", -1);
         SetLimitFPS();
+        //Achievement notification -> 1/true
+        PlayerPrefs.SetInt("video_achievementNotification", 1);
         //Advanced stats -> Hide
         PlayerPrefs.SetString("video_ShowFramerates", "false");
         PlayerPrefs.SetString("video_ShowSystemClock", "false");
@@ -122,7 +124,7 @@ public class GameCore_Video : MonoBehaviour {
     //Advanced stats
     public void SetShowAdvancedStats() {
 
-        AdvancedStatsManager.instance.GetComponent<AdvancedStatsManager>().UpdateAdvancedStatsUI();
+        AdvancedGameUI.instance.GetAdvancedStatsManager().UpdateAdvancedStatsUI();
 
     }
 
