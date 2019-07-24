@@ -44,6 +44,10 @@ public class SceneLoader : MonoBehaviour {
 
     }
 
+    public string GetCurrentSceneName() {
+        return SceneManager.GetActiveScene().name;
+    }
+
     public void ExitTheGame() {
 
         Application.Quit();

@@ -47,9 +47,4 @@ public class AdvancedGameUI : MonoBehaviour {
         GetAchievementManager().LoadAchievements();
     }
 
-    //ONLY TO TEST, SHOULD BE DISABLED AS ALREADY DONE BY THE FIRST GAME LOAD MANAGER
-    private void Awake() {
-        Load();
-    }
-
 }

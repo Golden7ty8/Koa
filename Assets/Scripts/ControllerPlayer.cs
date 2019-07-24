@@ -226,7 +226,8 @@ public class ControllerPlayer : MonoBehaviour
         }*/
 
         //If jump is not being held and you have upwards velocity, start cutting that upward velocity.
-        if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
+        //if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
+        if (rb.velocity.y > 0 && !Input.GetKey((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jump")))) {
 
             //rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * (Time.deltaTime * jumpVelocityCutMult + (1 - Time.deltaTime) * 1), rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * jumpVelocityCutMult, rb.velocity.z);

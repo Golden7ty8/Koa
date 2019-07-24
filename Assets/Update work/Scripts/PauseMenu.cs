@@ -3,10 +3,13 @@ using System.Collections;
 
 public class PauseMenu : MonoBehaviour {
 
+    [Header("PauseMenu")]
     [SerializeField]
     private GameObject pauseMenu;
     [SerializeField]
     private SceneLoader sceneLoader;
+    [SerializeField]
+    private GameObject options;
     [SerializeField]
     private KeyCode pauseMenuKey;
     [SerializeField]
@@ -16,6 +19,11 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField]
     private GameObject unsavedGameWarning;
 
+    [Header("Screenshot")]
+    [SerializeField]
+    private KeyCode screenshotKey;
+    private int superSize;
+
     private void Start() {
         DisablePauseMenu();
     }
@@ -23,6 +31,10 @@ public class PauseMenu : MonoBehaviour {
     private void LateUpdate() {
 
         if(Input.GetKeyDown(pauseMenuKey)) {
+            string currentSceneName = sceneLoader.GetCurrentSceneName();
+            if(currentSceneName == "MainMenu" || currentSceneName == "LoadMainMenu" || currentSceneName == "Credits") {
+                return;
+            }
             if(pauseMenu.activeSelf) {
                 DisablePauseMenu();
             }
@@ -30,9 +42,15 @@ public class PauseMenu : MonoBehaviour {
                 EnablePauseMenu();
             }
         }
+        if(Input.GetKeyDown(screenshotKey)) {
+            superSize = PlayerPrefs.GetInt("video_screenshotSuperSize");
+            ShotScreenshot();
+        }
         
     }
 
+    //Pause menu
+    #region
     public void EnablePauseMenu() {
 
         if(freezeBackgroudGame) {
@@ -60,6 +78,8 @@ public class PauseMenu : MonoBehaviour {
             //Enable controls and IA ?
         }
         pauseMenu.SetActive(false);
+        options.SetActive(false);
+        unsavedGameWarning.SetActive(false);
         if(hideCursor) {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -82,7 +102,17 @@ public class PauseMenu : MonoBehaviour {
 
         sceneLoader.SetLoadingBackground(0);
         sceneLoader.LoadSceneFromName("MainMenu");
+        unsavedGameWarning.SetActive(false);
+        DisablePauseMenu();
 
+    }
+    #endregion
+
+    //Screenshot
+    private void ShotScreenshot() {
+        string currentDate = System.DateTime.Now.ToString();
+        currentDate = currentDate.Replace("/", "-").Replace(":", "-").Replace(" ", "_");
+        ScreenCapture.CaptureScreenshot("Koa_" + currentDate + ".png", superSize);
     }
 
 }

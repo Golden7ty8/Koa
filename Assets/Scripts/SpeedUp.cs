@@ -23,6 +23,10 @@ public class SpeedUp : MonoBehaviour
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
             controllerPlayer.walkSpeed *= speedMult;
+
+            //Mark the acheivment as completed.
+            AchievementManager achievementManager = AdvancedGameUI.instance.GetAchievementManager();
+            achievementManager.SetAchievementCompleted("shortcut");
         }
     }
 

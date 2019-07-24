@@ -44,15 +44,15 @@ public class Options_Audio : MonoBehaviour {
     public void UpdateUI() {
 
         //Master volume
-        masterVolumeSlider.value = PlayerPrefs.GetFloat("audio_MasterVolume");
+        masterVolumeSlider.value = PlayerPrefs.GetInt("audio_MasterVolume100");
         masterVolumeCounter.text = masterVolumeSlider.value.ToString();
 
         //Sound effect volume
-        soundEffectVolumeSlider.value = PlayerPrefs.GetFloat("audio_SoundEffectVolume");
+        soundEffectVolumeSlider.value = PlayerPrefs.GetInt("audio_SoundEffectVolume100");
         soundEffectVolumeCounter.text = soundEffectVolumeSlider.value.ToString();
 
         //Music volume
-        musicVolumeSlider.value = PlayerPrefs.GetFloat("audio_MusicVolume");
+        musicVolumeSlider.value = PlayerPrefs.GetInt("audio_MusicVolume100");
         musicVolumeCounter.text = musicVolumeSlider.value.ToString();
 
         //Subtitle
@@ -72,24 +72,30 @@ public class Options_Audio : MonoBehaviour {
     #region
         //Master volume
     public void SetMasterVolume(float masterVolume) {
-        
-        PlayerPrefs.SetFloat("audio_MasterVolume", masterVolume);
+
+        PlayerPrefs.SetInt("audio_MasterVolume100", (int)masterVolume);
+        masterVolume = (100 - masterVolume) * 0.8f;
+        PlayerPrefs.SetFloat("audio_MasterVolume", -masterVolume);
         GameCore_Main.instance.GetComponent<GameCore_Audio>().SetMasterVolume();
 
     }
 
     //Sound effect volume
     public void SetSoundEffectVolume(float soundEffectVolume) {
-        
-        PlayerPrefs.SetFloat("audio_SoundEffectVolume", soundEffectVolume);
+
+        PlayerPrefs.SetInt("audio_SoundEffectVolume100", (int)soundEffectVolume);
+        soundEffectVolume = (100 - soundEffectVolume) * 0.8f;
+        PlayerPrefs.SetFloat("audio_SoundEffectVolume", -soundEffectVolume);
         GameCore_Main.instance.GetComponent<GameCore_Audio>().SetSoundEffectVolume();
 
     }
 
     //Music volume
     public void SetMusicVolume(float musicVolume) {
-        
-        PlayerPrefs.SetFloat("audio_MusicVolume", musicVolume);
+
+        PlayerPrefs.SetInt("audio_MusicVolume100", (int)musicVolume);
+        musicVolume = (100 - musicVolume) * 0.8f;
+        PlayerPrefs.SetFloat("audio_MusicVolume", -musicVolume);
         GameCore_Main.instance.GetComponent<GameCore_Audio>().SetMusicVolume();
 
     }

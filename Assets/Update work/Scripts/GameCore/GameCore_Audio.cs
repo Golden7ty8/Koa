@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class GameCore_Audio : MonoBehaviour {
@@ -6,19 +7,25 @@ public class GameCore_Audio : MonoBehaviour {
     [SerializeField]
     private bool isReady = false;
 
+    [SerializeField]
+    private AudioMixer audioMixer;
+
     // ***x are the options not working or complete yet
 
     //Reset video options
     public void ResetAudioOptions(GameObject caller) {
 
-        //Master volume -> 80
-        PlayerPrefs.SetFloat("audio_MasterVolume", 80);
+        //Master volume -> 80 (80 - 100)
+        PlayerPrefs.SetFloat("audio_MasterVolume", -20);
+        PlayerPrefs.SetInt("audio_MasterVolume100", 80);
         SetMasterVolume();
-        //Sound effect volume -> 100
-        PlayerPrefs.SetFloat("audio_SoundEffectVolume", 100);
+        //Sound effect volume -> 100 (100 - 100)
+        PlayerPrefs.SetFloat("audio_SoundEffectVolume", 0);
+        PlayerPrefs.SetInt("audio_SoundEffectVolume100", 100);
         SetSoundEffectVolume();
-        //Music volume -> 100
-        PlayerPrefs.SetFloat("audio_MusicVolume", 100);
+        //Music volume -> 100 (100 - 100)
+        PlayerPrefs.SetFloat("audio_MusicVolume", 0);
+        PlayerPrefs.SetInt("audio_MusicVolume100", 100);
         SetMusicVolume();
         //Subtitle -> No
         PlayerPrefs.SetString("audio_Subtitle", "false");
@@ -28,7 +35,9 @@ public class GameCore_Audio : MonoBehaviour {
         SetSubtitle_Language();
 
         Debug.Log("Audio options should have been reset and saved at their default state");
-        //caller.GetComponent<Options_Audio>().UpdateUI();
+        if(caller != null) {
+            caller.GetComponent<Options_Audio>().UpdateUI();
+        }
 
     }
 
@@ -58,17 +67,20 @@ public class GameCore_Audio : MonoBehaviour {
 
     //***Master volume
     public void SetMasterVolume() {
-
+        float currentMasterVolume = PlayerPrefs.GetFloat("audio_MasterVolume");
+        audioMixer.SetFloat("MasterVolume", currentMasterVolume);
     }
 
     //***Sound effect volule
     public void SetSoundEffectVolume() {
-
+        float currentSoundEffectVolume = PlayerPrefs.GetFloat("audio_SoundEffectVolume");
+        audioMixer.SetFloat("SoundEffectVolume", currentSoundEffectVolume);
     }
 
     //***Music volume
     public void SetMusicVolume() {
-
+        float currentMusicVolume = PlayerPrefs.GetFloat("audio_MusicVolume");
+        audioMixer.SetFloat("MusicVolume", currentMusicVolume);
     }
 
     //***Subtitle

@@ -34,5 +34,7 @@ public class EndGame : MonoBehaviour
         active = false;
         cameraAudioSource.clip = endMusicClip;
         cameraAudioSource.Play();
+        AchievementManager achievementManager = AdvancedGameUI.instance.GetAchievementManager();
+        achievementManager.SetAchievementCompleted("win");
     }
 }

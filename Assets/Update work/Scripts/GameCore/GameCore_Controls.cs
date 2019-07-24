@@ -12,20 +12,30 @@ public class GameCore_Controls : MonoBehaviour {
     public void ResetControls(GameObject caller) {
 
         //General
-        PlayerPrefs.SetString("pauseMenu", "Escape");
+        PlayerPrefs.SetString("pause_Menu", "Escape");
         PlayerPrefs.SetString("screenshot", "P");
 
         //Movements
-        PlayerPrefs.SetString("walkForward", "Z");
-        PlayerPrefs.SetString("walkBack", "S");
-        PlayerPrefs.SetString("walkLeft", "Q");
-        PlayerPrefs.SetString("walkRight", "D");
-        PlayerPrefs.SetString("crouch", "LeftShift");
+        PlayerPrefs.SetString("walk_forward", "Z");
+        PlayerPrefs.SetString("walk_forward_alt", "UpArrow");
+        PlayerPrefs.SetString("walk_back", "S");
+        PlayerPrefs.SetString("walk_back_alt", "DownArrow");
+        PlayerPrefs.SetString("walk_left", "D");
+        PlayerPrefs.SetString("walk_left_alt", "LeftArrow");
+        PlayerPrefs.SetString("walk_right", "A");
+        PlayerPrefs.SetString("walk_right_alt", "RightArrow");
+        PlayerPrefs.SetString("crouch", "LeftControl");
+        PlayerPrefs.SetString("crouch_alt", "None");
         PlayerPrefs.SetString("jump", "Space");
+        PlayerPrefs.SetString("jump_alt", "None");
+        PlayerPrefs.SetString("run", "LeftShift");
+        PlayerPrefs.SetString("run_alt", "None");
 
         //Abiliies
-        PlayerPrefs.SetString("interact", "E");
-        PlayerPrefs.SetString("darkLight", "Mouse0");
+        PlayerPrefs.SetString("black_light", "LeftAlt");
+        PlayerPrefs.SetString("black_light_alt", "None");
+        PlayerPrefs.SetString("charge", "S");
+        PlayerPrefs.SetString("charge_alt", "None");
 
         Debug.Log("Controls should have been reset and saved at their default state");
         //caller.GetComponent<Options_Controls>().UpdateUI();
