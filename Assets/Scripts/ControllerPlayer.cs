@@ -146,7 +146,8 @@ public class ControllerPlayer : MonoBehaviour
             cameraPivot.transform.eulerAngles += new Vector3(0, Mathf.Round(ro) * rotationaljumpAngle, 0);
 
         //Set rotation
-        transform.eulerAngles = new Vector3(0, cameraPivot.transform.eulerAngles.y + (dir ? 0 : 180), 0);
+        //transform.eulerAngles = new Vector3(0, cameraPivot.transform.eulerAngles.y + (dir ? 0 : 180), 0);
+        transform.localScale = new Vector3((dir ? 1 : -1), 1, 1);
 
         //Move Koa
         if (h != 0 || v != 0)
@@ -178,7 +179,8 @@ public class ControllerPlayer : MonoBehaviour
 
             float dirVectorLength = Mathf.Sqrt(Mathf.Pow(h, 2) + Mathf.Pow(v, 2));
 
-            rb.MovePosition(transform.position + transform.TransformDirection(new Vector3(h / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime * (dir ? 1 : -1), 0, v / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime * (dir ? 1 : -1))));
+            //rb.MovePosition(transform.position + transform.TransformDirection(new Vector3(h / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime * (dir ? 1 : -1), 0, v / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime * (dir ? 1 : -1))));
+            rb.MovePosition(transform.position + transform.TransformDirection(new Vector3(h / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime, 0, v / dirVectorLength * walkSpeed * effectiveSpeedMult * Time.deltaTime * (dir ? 1 : -1))));
 
         }
         else {
@@ -204,12 +206,19 @@ public class ControllerPlayer : MonoBehaviour
         //Should Koa Jump?
         /*if (j)
             //Debug.Log("jumpInputDelayTimer: " + jumpInputDelayTimer);*/
-        if (jTimer && isGrounded && jumpReloadTimer <= 0)
+        if (jTimer && isGrounded && jumpReloadTimer <= 0 && rb.velocity.y < jumpHeight)
         {
 
             //Proceed with jumping!
             //Debug.Log("Jumped!");
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
+
+            //If upward velocity is now higher then the jumpHeight, then set it to jump height.
+            if(rb.velocity.y > jumpHeight)
+            {
+                rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);k
+            }
+
             koaAnimator.SetBool("isJumping", true);
 
             //No extra window of time allowed where you can jump a second time!
