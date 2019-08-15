@@ -6,6 +6,12 @@ public class PauseMenu : MonoBehaviour {
     [Header("PauseMenu")]
     [SerializeField]
     private GameObject pauseMenu;
+    public bool GetPauseMenuEnabled() {
+        if(pauseMenu.activeSelf) {
+            return true;
+        }
+        return false;
+    }
     [SerializeField]
     private SceneLoader sceneLoader;
     [SerializeField]
@@ -15,6 +21,9 @@ public class PauseMenu : MonoBehaviour {
     public void SetPauseMenuKey() {
         string PauseMenyKey = PlayerPrefs.GetString("pause_Menu", "Escape");
         pauseMenuKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PauseMenyKey);
+    }
+    public KeyCode GetPauseMenyKey() {
+        return pauseMenuKey;
     }
     [SerializeField]
     private bool freezeBackgroudGame = false;
@@ -45,7 +54,7 @@ public class PauseMenu : MonoBehaviour {
         if(Input.GetKeyDown(pauseMenuKey) && canSwitchPauseMenu) {
             canSwitchPauseMenu = false;
             string currentSceneName = sceneLoader.GetCurrentSceneName();
-            if(currentSceneName == "MainMenu" || currentSceneName == "LoadMainMenu" || currentSceneName == "Credits") {
+            if(CheckMenu()) {
                 return;
             }
             if(pauseMenu.activeSelf) {
@@ -96,7 +105,7 @@ public class PauseMenu : MonoBehaviour {
         pauseMenu.SetActive(false);
         options.SetActive(false);
         unsavedGameWarning.SetActive(false);
-        if(hideCursor) {
+        if(hideCursor && !CheckMenu()) {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -117,13 +126,21 @@ public class PauseMenu : MonoBehaviour {
 
     public void MainMenu() {
 
-        sceneLoader.SetLoadingBackground(0);
+        //sceneLoader.SetLoadingBackground(0);
         sceneLoader.LoadSceneFromName("MainMenu");
         unsavedGameWarning.SetActive(false);
         DisablePauseMenu();
 
     }
     #endregion
+
+    private bool CheckMenu() {
+        string currentSceneName = sceneLoader.GetCurrentSceneName();
+        if(currentSceneName == "MainMenu" || currentSceneName == "LoadMainMenu" || currentSceneName == "Credits") {
+            return true;
+        }
+        return false;
+    }
 
     //Screenshot
     private void ShotScreenshot() {

@@ -73,6 +73,11 @@ public class SensorGround : MonoBehaviour
         //isGrounded = false;
     }
 
+    /*private void OnTriggerStay(Collider other)
+    {
+        
+    }*/
+
     /*void OnCollisionExit(Collision other)
     {
         if (other.collider.tag != "Player")

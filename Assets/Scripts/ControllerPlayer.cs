@@ -216,7 +216,7 @@ public class ControllerPlayer : MonoBehaviour
             //If upward velocity is now higher then the jumpHeight, then set it to jump height.
             if(rb.velocity.y > jumpHeight)
             {
-                rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);k
+                rb.velocity = new Vector3(rb.velocity.x, jumpHeight, rb.velocity.z);
             }
 
             koaAnimator.SetBool("isJumping", true);

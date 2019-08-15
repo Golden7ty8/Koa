@@ -13,20 +13,24 @@ public class Tutorial_GetControls : MonoBehaviour {
     private bool getBlackLightControl;
 
     private void Start() {
-        if(getMovementControls) {
+        Reload();
+    }
+
+    public void Reload() {
+        if (getMovementControls) {
             //GetComponent<Text>().text = PlayerPrefs.GetString("walk_forward") + PlayerPrefs.GetString("walk_back") + PlayerPrefs.GetString("walk_left") + PlayerPrefs.GetString("walk_right");
             GetComponent<Text>().text = PlayerPrefs.GetString("walk_left") + PlayerPrefs.GetString("walk_right");
             return;
         }
-        else if(getJumpControl) {
+        else if (getJumpControl) {
             GetComponent<Text>().text = PlayerPrefs.GetString("jump");
             return;
         }
-        else if(getRunControl) {
+        else if (getRunControl) {
             GetComponent<Text>().text = PlayerPrefs.GetString("run");
             return;
         }
-        else if(getBlackLightControl) {
+        else if (getBlackLightControl) {
             GetComponent<Text>().text = PlayerPrefs.GetString("black_light");
             return;
         }

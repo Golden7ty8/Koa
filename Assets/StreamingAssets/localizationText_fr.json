@@ -66,7 +66,7 @@
 			{"key":"Options_Controls_Movements_Jump","value":"SAUTER"},
 			{"key":"Options_Controls_Movements_Run","value":"COURIR"},
 		{"key":"Options_Controls_Abilities","value":"HABILITÉS"},
-			{"key":"Options_Controls_Abilities_BlackLight","value":"LUMIÈRE DES OMBRES"},
+			{"key":"Options_Controls_Abilities_BlackLight","value":"LUMIÈRE D'OMBRE"},
 			{"key":"Options_Controls_Abilities_Charge","value":"RECHARGEMENT RAPIDE"},
 
 {"key":"Achievements","value":"Achievemnets"},
@@ -76,7 +76,7 @@
 		{"key":"achievement_win_Title","value":"BATTRE LE JEU"},
 			{"key":"win_Description","value":"COMPLÉTER LE NIVEAU 1"},
 		{"key":"achievement_winFast_Title","value":"SPEEEED RUN !!"},
-			{"key":"winFast_Description","value":"COMPLÉTER LE NIVEAU 1 EN MOINS DE -- MINUTES"},
+			{"key":"winFast_Description","value":"COMPLÉTER LE NIVEAU 1 EN MOINS DE 75 SECONDES"},
 		{"key":"achievement_shortcut_Title","value":"POINT DE VUE ALTERNATIF"},
 			{"key":"shortcut_Description","value":"TROUVER LE RACCOURCI DU NIVEAU 1"},
 		{"key":"achievement_Credits_ThankYou_Title","value":"MERCI"},
@@ -114,6 +114,6 @@
 	{"key":"Game_Tutorial_5","value":"Maintenez "},
 		{"key":"Game_Tutorial_5_2","value":"pour courir"},
 	{"key":"Game_Tutorial_6","value":"Utiliser "},
-		{"key":"Game_Tutorial_6_2","value":"pour activer ou désactiver votre lumière des ombres. La lumière des ombres révèle des choses invisibles"}
+		{"key":"Game_Tutorial_6_2","value":"pour activer ou désactiver votre lumière d'ombres. La lumière d'ombres révèle des choses invisibles"}
 
 ]}

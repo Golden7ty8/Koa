@@ -76,7 +76,7 @@
 		{"key":"achievement_win_Title","value":"BEAT THE GAME"},
 			{"key":"win_Description","value":"COMPLETE THE LEVEL 1"},
 		{"key":"achievement_winFast_Title","value":"SPEEEED RUN !!"},
-			{"key":"winFast_Description","value":"COMPLETE THE LEVEL 1 WITHIN ?? MINUTES"},
+			{"key":"winFast_Description","value":"COMPLETE THE LEVEL 1 WITHIN 75 SECONDS"},
 		{"key":"achievement_shortcut_Title","value":"ALTERNATIVE POINT OF VIEW"},
 			{"key":"shortcut_Description","value":"FIND THE SHORTCUT OF THE LEVEL 1"},
 		{"key":"achievement_Credits_ThankYou_Title","value":"THANK YOU"},
