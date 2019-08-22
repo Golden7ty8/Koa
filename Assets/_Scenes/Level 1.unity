@@ -968,9 +968,9 @@ RectTransform:
   m_Father: {fileID: 1583150235}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242.5, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 237.5, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &116303657
@@ -8410,9 +8410,9 @@ RectTransform:
   m_Father: {fileID: 1165783122}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 257.5, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 259, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &404328756
@@ -9710,9 +9710,9 @@ RectTransform:
   m_Father: {fileID: 1324735779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242.5, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 316.5, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &590873444
@@ -10544,6 +10544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  controllerPlayer: {fileID: 0}
   KoaHeight: 0
   feetRatio: 0
   isGrounded: 0
@@ -20815,9 +20816,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterDripSounds:
-  - {fileID: 8300000, guid: edd8c405a09d3a3489bf53abba2eedda, type: 3}
-  - {fileID: 8300000, guid: 8072f9a4ee9e60341a93b2004ef0669d, type: 3}
-  - {fileID: 8300000, guid: 097860a081321884a9afb309097e35c1, type: 3}
+  - clip: {fileID: 8300000, guid: edd8c405a09d3a3489bf53abba2eedda, type: 3}
+    volume: 0.42
+  - clip: {fileID: 8300000, guid: 8072f9a4ee9e60341a93b2004ef0669d, type: 3}
+    volume: 0.6
+  - clip: {fileID: 8300000, guid: 097860a081321884a9afb309097e35c1, type: 3}
+    volume: 0.6
 --- !u!82 &1330814891
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20966,7 +20970,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 244, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1338159757
@@ -22331,9 +22335,9 @@ RectTransform:
   m_Father: {fileID: 1583150235}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 257.5, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 252.5, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1472023938
@@ -22603,7 +22607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 331.5, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1494047798
@@ -24546,7 +24550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 280, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1747431461
@@ -25151,7 +25155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 265, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1825868433
@@ -25280,7 +25284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 265, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1849180181
@@ -25511,11 +25515,24 @@ MonoBehaviour:
   delayedJumpWindowAfter: 0.2
   jumpVelocityCutMult: 0.5
   jumpReloadTime: 0.5
-  jumpingSound: {fileID: 8300000, guid: 3c263e9c7b5a31940a24e232a02bab5c, type: 3}
-  landingSound: {fileID: 8300000, guid: 2ece53c9b30caf6499a5b78463a3a070, type: 3}
-  deathBySpikeSound: {fileID: 8300000, guid: fbc666714216e3949976b2ce4af52955, type: 3}
-  deathByWaterSound: {fileID: 8300000, guid: 11c380c297b594c49ba8c3166f686d2c, type: 3}
-  winSound: {fileID: 8300000, guid: 63df694a7e8c6d44397d0037fa9c4dec, type: 3}
+  landingSoundReloadTime: 0.2
+  maxYVelocityForLandingSound: -0.0001
+  jumpingSound:
+    clip: {fileID: 8300000, guid: 3c263e9c7b5a31940a24e232a02bab5c, type: 3}
+    volume: 1
+  landingSound:
+    clip: {fileID: 8300000, guid: 2ece53c9b30caf6499a5b78463a3a070, type: 3}
+    volume: 0.25
+  deathBySpikeSound:
+    clip: {fileID: 8300000, guid: fbc666714216e3949976b2ce4af52955, type: 3}
+    volume: 1
+  deathByWaterSound:
+    clip: {fileID: 8300000, guid: 11c380c297b594c49ba8c3166f686d2c, type: 3}
+    volume: 1
+  winSound:
+    clip: {fileID: 8300000, guid: 63df694a7e8c6d44397d0037fa9c4dec, type: 3}
+    volume: 1
+  prevYPosition: 0
 --- !u!114 &1859186393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25529,6 +25546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2052962250800910127}
+  controllerPlayer: {fileID: 1859186374}
   KoaHeight: 2.28
   feetRatio: 0.125
   isGrounded: 0
@@ -26885,7 +26903,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 280, y: 0}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2047950749
@@ -35260,6 +35278,11 @@ PrefabInstance:
       propertyPath: viewSubject
       value: 
       objectReference: {fileID: 2052962250800910099}
+    - target: {fileID: 8774290867636905076, guid: edae2d0c666787e42bb883e4a30a05c6,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edae2d0c666787e42bb883e4a30a05c6, type: 3}
 --- !u!1001 &9185577210228568224

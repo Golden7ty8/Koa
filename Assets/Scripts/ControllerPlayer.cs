@@ -34,6 +34,9 @@ public class ControllerPlayer : MonoBehaviour
     public float delayedJumpWindowAfter;
     public float jumpVelocityCutMult;
     public float jumpReloadTime;
+    public float landingSoundReloadTime;
+    public float maxYVelocityForLandingSound;
+    //public float maxYDisplacementForLandingSound;
 
     float effectiveSpeedMult;
     bool dir;
@@ -43,14 +46,16 @@ public class ControllerPlayer : MonoBehaviour
     float jumpReloadTimer;
 
     [Header("Player's SFX")]
-    public AudioClip jumpingSound;
-    public AudioClip landingSound;
-    public AudioClip deathBySpikeSound;
-    public AudioClip deathByWaterSound;
-    public AudioClip winSound;
+    public AudioClipPlus jumpingSound;
+    public AudioClipPlus landingSound;
+    public AudioClipPlus deathBySpikeSound;
+    public AudioClipPlus deathByWaterSound;
+    public AudioClipPlus winSound;
 
     //For SFX
-    bool prevGrounded = true;
+    float timeSinceGrounded;
+    [HideInInspector]
+    public float prevYPosition;
 
     //bool inputjump;
 
@@ -70,6 +75,9 @@ public class ControllerPlayer : MonoBehaviour
         if (!useSpawnPoint)
             spawnPoint = transform.position;
 
+        timeSinceGrounded = 0;
+        prevYPosition = 0;
+
         //if (useMenuControls) {
 
             //Override untiy's inputs (Input.SetAxis("Vertical") = w, s)
@@ -84,12 +92,18 @@ public class ControllerPlayer : MonoBehaviour
         if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("black_light"))))
             blackLight.SetActive(!blackLight.activeSelf);
 
+        /*if (timeSinceGrounded >= landingSoundReloadTime && groundSensorScript.isGrounded)
+            Debug.Log("Breakpoint!");*/
+
         //Play landing Sound as needed (if we are now grounded but were not the previous frame)!
-        if(!prevGrounded && groundSensorScript.isGrounded)
+        if(timeSinceGrounded >= landingSoundReloadTime && rb.velocity.y < maxYVelocityForLandingSound && /*(transform.position.y - prevYPosition) / Time.deltaTime*//*groundSensorScript.YdisplacementOnGroundedStart < maxYDisplacementForLandingSound && */groundSensorScript.isGrounded)
         {
-            GetComponent<AudioSource>().PlayOneShot(landingSound);
+            GetComponent<AudioSource>().PlayOneShot(landingSound.clip, landingSound.volume);
         }
-        prevGrounded = groundSensorScript.isGrounded;
+        timeSinceGrounded = groundSensorScript.isGrounded ? 0 : timeSinceGrounded + Time.deltaTime;
+        prevYPosition = transform.position.y;
+
+        //Debug.Log(groundSensorScript.YdisplacementOnGroundedStart + " < " + maxYDisplacementForLandingSound);
     }
 
     // Update is called once per frame
@@ -232,7 +246,7 @@ public class ControllerPlayer : MonoBehaviour
 
             //Play SFX!
             //GetComponent<AudioSource>().clip = jumpingSound;
-            GetComponent<AudioSource>().PlayOneShot(jumpingSound);
+            GetComponent<AudioSource>().PlayOneShot(jumpingSound.clip, jumpingSound.volume);
 
             //If upward velocity is now higher then the jumpHeight, then set it to jump height.
             if(rb.velocity.y > jumpHeight)
@@ -275,10 +289,10 @@ public class ControllerPlayer : MonoBehaviour
         switch (deathType)
         {
             case 1:
-                GetComponent<AudioSource>().PlayOneShot(deathBySpikeSound);
+                GetComponent<AudioSource>().PlayOneShot(deathBySpikeSound.clip, deathBySpikeSound.volume);
                 break;
             default:
-                GetComponent<AudioSource>().PlayOneShot(deathByWaterSound);
+                GetComponent<AudioSource>().PlayOneShot(deathByWaterSound.clip, deathByWaterSound.volume);
                 break;
         }
 

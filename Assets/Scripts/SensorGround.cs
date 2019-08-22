@@ -6,6 +6,7 @@ public class SensorGround : MonoBehaviour
 {
     [Header("References:")]
     public Rigidbody rb;
+    public ControllerPlayer controllerPlayer;
 
     [Header("Options:")]
     [Tooltip("Actual height of Koa.")]
@@ -15,6 +16,7 @@ public class SensorGround : MonoBehaviour
 
     //[HideInInspector]
     public bool isGrounded;
+    //public float YdisplacementOnGroundedStart;
 
     private bool isCurrentlyGrounded;
 
@@ -62,6 +64,12 @@ public class SensorGround : MonoBehaviour
             float tmp = Mathf.Abs(other.GetContact(i).normal.x);
 
             if (other.collider.tag != "Player" && other.GetContact(i).point.y <= transform.position.y + KoaHeight * feetRatio && Mathf.Abs(other.GetContact(i).normal.x) <= other.GetContact(i).normal.y) {
+
+                //Info for landing SFX.
+                /*if(!isGrounded)
+                {
+                    YdisplacementOnGroundedStart = (transform.position.y - controllerPlayer.prevYPosition) / Time.deltaTime;
+                }*/
 
                 isCurrentlyGrounded = true;
                 return;

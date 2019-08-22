@@ -10,7 +10,7 @@ public class OpenLink : MonoBehaviour {
 
     public void linkDiscord()
     {
-        Application.OpenURL("https://discord.gg/FJqkmPc");
+        Application.OpenURL("https://discord.gg/9fVrRWh");
     }
     
     public void linkTwitter()

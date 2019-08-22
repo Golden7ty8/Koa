@@ -15,13 +15,13 @@ public class GameCore_Audio : MonoBehaviour {
     //Reset video options
     public void ResetAudioOptions(GameObject caller) {
 
-        //Master volume -> 80 (80 - 100)
-        PlayerPrefs.SetFloat("audio_MasterVolume", -20);
-        PlayerPrefs.SetInt("audio_MasterVolume100", 80);
+        //Master volume -> 100 (100 - 100)
+        PlayerPrefs.SetFloat("audio_MasterVolume", 0);
+        PlayerPrefs.SetInt("audio_MasterVolume100", 100);
         SetMasterVolume();
-        //Sound effect volume -> 100 (100 - 100)
-        PlayerPrefs.SetFloat("audio_SoundEffectVolume", 0);
-        PlayerPrefs.SetInt("audio_SoundEffectVolume100", 100);
+        //Sound effect volume -> 90 (90 - 100)
+        PlayerPrefs.SetFloat("audio_SoundEffectVolume", -10);
+        PlayerPrefs.SetInt("audio_SoundEffectVolume100", 90);
         SetSoundEffectVolume();
         //Music volume -> 100 (100 - 100)
         PlayerPrefs.SetFloat("audio_MusicVolume", 0);

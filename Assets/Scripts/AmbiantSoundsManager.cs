@@ -2,10 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public struct AudioClipPlus {
+
+    public AudioClip clip;
+    public float volume;
+
+}
+
 public class AmbiantSoundsManager : MonoBehaviour
 {
 
-    public AudioClip[] waterDripSounds;
+    public AudioClipPlus[] waterDripSounds;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +26,9 @@ public class AmbiantSoundsManager : MonoBehaviour
     {
         if(!GetComponent<AudioSource>().isPlaying)
         {
-            GetComponent<AudioSource>().clip = waterDripSounds[Random.Range(0, waterDripSounds.Length)];
+            int index = Random.Range(0, waterDripSounds.Length);
+            GetComponent<AudioSource>().clip = waterDripSounds[index].clip;
+            GetComponent<AudioSource>().volume = waterDripSounds[index].volume;
             GetComponent<AudioSource>().Play();
         }
     }
