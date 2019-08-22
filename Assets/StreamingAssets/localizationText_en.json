@@ -114,6 +114,7 @@
 	{"key":"Game_Tutorial_5","value":"Hold "},
 		{"key":"Game_Tutorial_5_2","value":"to run"},
 	{"key":"Game_Tutorial_6","value":"Press "},
-		{"key":"Game_Tutorial_6_2","value":"to switch your black light. The black light reveals invisible things"}
+		{"key":"Game_Tutorial_6_2","value":"to switch your black light. The black light reveals invisible things"},
+	{"key":"Game_SpeedRunTimer","value":"SPEED RUN TIMER :"}
 
 ]}

@@ -42,6 +42,16 @@ public class ControllerPlayer : MonoBehaviour
     float groundeddelayTimer;
     float jumpReloadTimer;
 
+    [Header("Player's SFX")]
+    public AudioClip jumpingSound;
+    public AudioClip landingSound;
+    public AudioClip deathBySpikeSound;
+    public AudioClip deathByWaterSound;
+    public AudioClip winSound;
+
+    //For SFX
+    bool prevGrounded = true;
+
     //bool inputjump;
 
     //bool j;
@@ -73,6 +83,13 @@ public class ControllerPlayer : MonoBehaviour
         //if (Input.GetKeyDown(ObjectNames.NicifyVariableName(PlayerPrefs.GetString("black_light")).ToLower()))
         if (Input.GetKeyDown((KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("black_light"))))
             blackLight.SetActive(!blackLight.activeSelf);
+
+        //Play landing Sound as needed (if we are now grounded but were not the previous frame)!
+        if(!prevGrounded && groundSensorScript.isGrounded)
+        {
+            GetComponent<AudioSource>().PlayOneShot(landingSound);
+        }
+        prevGrounded = groundSensorScript.isGrounded;
     }
 
     // Update is called once per frame
@@ -213,6 +230,10 @@ public class ControllerPlayer : MonoBehaviour
             //Debug.Log("Jumped!");
             rb.AddForce(new Vector3(0, jumpHeight, 0), ForceMode.Impulse);
 
+            //Play SFX!
+            //GetComponent<AudioSource>().clip = jumpingSound;
+            GetComponent<AudioSource>().PlayOneShot(jumpingSound);
+
             //If upward velocity is now higher then the jumpHeight, then set it to jump height.
             if(rb.velocity.y > jumpHeight)
             {
@@ -245,10 +266,21 @@ public class ControllerPlayer : MonoBehaviour
 
     }
 
-    public void KillKoa() {
+    public void KillKoa(int deathType = 0) {
 
         transform.position = spawnPoint;
         rb.velocity = Vector3.zero;
+
+        //Play SFX
+        switch (deathType)
+        {
+            case 1:
+                GetComponent<AudioSource>().PlayOneShot(deathBySpikeSound);
+                break;
+            default:
+                GetComponent<AudioSource>().PlayOneShot(deathByWaterSound);
+                break;
+        }
 
     }
 }

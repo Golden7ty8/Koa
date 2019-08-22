@@ -75,7 +75,7 @@
 			{"key":"achievement_Hidden_Description","value":"VOUS DEVEZ ACCOMPLIR LE HAUT FAIT POUR ACCÉDER À SA DESCRIPTION"},
 		{"key":"achievement_win_Title","value":"BATTRE LE JEU"},
 			{"key":"win_Description","value":"COMPLÉTER LE NIVEAU 1"},
-		{"key":"achievement_winFast_Title","value":"SPEEEED RUN !!"},
+		{"key":"achievement_winFast_Title","value":"CONTRE LA MONTRE"},
 			{"key":"winFast_Description","value":"COMPLÉTER LE NIVEAU 1 EN MOINS DE 75 SECONDES"},
 		{"key":"achievement_shortcut_Title","value":"POINT DE VUE ALTERNATIF"},
 			{"key":"shortcut_Description","value":"TROUVER LE RACCOURCI DU NIVEAU 1"},
@@ -114,6 +114,7 @@
 	{"key":"Game_Tutorial_5","value":"Maintenez "},
 		{"key":"Game_Tutorial_5_2","value":"pour courir"},
 	{"key":"Game_Tutorial_6","value":"Utiliser "},
-		{"key":"Game_Tutorial_6_2","value":"pour activer ou désactiver votre lumière d'ombres. La lumière d'ombres révèle des choses invisibles"}
+		{"key":"Game_Tutorial_6_2","value":"pour activer ou désactiver votre lumière d'ombres. La lumière d'ombres révèle des choses invisibles"},
+	{"key":"Game_SpeedRunTimer","value":"TEMPS DU CONTRE LA MONTRE :"}
 
 ]}

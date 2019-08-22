@@ -6,7 +6,13 @@ public class ColliderDeath : MonoBehaviour {
     {
         if (other.tag == "Player") {
 
-            other.GetComponentInParent<ControllerPlayer>().KillKoa();
+            if (tag == "Water")
+            {
+                other.GetComponentInParent<ControllerPlayer>().KillKoa();
+            } else
+            {
+                other.GetComponentInParent<ControllerPlayer>().KillKoa(1);
+            }
 
         }
     }
