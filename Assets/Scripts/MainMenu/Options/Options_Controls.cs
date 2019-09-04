@@ -20,6 +20,7 @@ public class Options_Controls : MonoBehaviour {
 
         GameCore_Main.instance.GetComponent<GameCore_Controls>().ResetControls(this.gameObject);
         //UpdateUI();
+        CustomBinding.ReloadTutorialElements();
 
     }
 

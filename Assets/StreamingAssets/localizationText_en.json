@@ -1,7 +1,7 @@
 ﻿{"items":[
 
 {"key":"language","value":"ENGLISH"},
-{"key":"gameMadeBy","value":"A GAME MADE BY POLYFOLDS TEAM"},
+{"key":"gameMadeBy","value":"A GAME MADE BY THE POLYFOLDS TEAM"},
 {"key":"current_version","value":"1.0.0.0"},
 
 {"key":"BACK","value":"BACK"},
@@ -19,7 +19,7 @@
 	{"key":"MainMenu_Options","value":"OPTIONS"},
 	{"key":"MainMenu_Achievements","value":"ACHIEVEMENTS"},
 	{"key":"MainMenu_Extra","value":"EXTRA"},
-	{"key":"MainMenu_QuitTheGame","value":"QUIT THE GAME"},
+	{"key":"MainMenu_QuitTheGame","value":"QUIT"},
 
 {"key":"Options","value":"Options"},
 	{"key":"Options_Video","value":"VIDEO"},
@@ -29,7 +29,7 @@
 		{"key":"Options_Video_Resolution","value":"RESOLUTION"},
 		{"key":"Options_Video_LimitFPS","value":"LIMIT FPS"},
 			{"key":"Options_Video_CustomLimitFPS","value":"CUSTOM LIMIT FPS"},
-			{"key":"Options_Video_LimitFPS_VSyncEnabled","value":"THE VSYNC IS ENABLED"},
+			{"key":"Options_Video_LimitFPS_VSyncEnabled","value":"VSYNC IS ENABLED"},
 		{"key":"Options_Video_AchievementNotification","value":"ACHIEVEMENT NOTIFICATION"},
 		{"key":"Options_Video_AdvancedStats","value":"ADVANCED STATS"},
 			{"key":"Options_Video_AdvancedStats_Framerate","value":"FRAMERATE"},
@@ -49,7 +49,7 @@
 		{"key":"Options_Audio_SoundEFfectVolume","value":"SOUND EFFECT VOLUME"},
 		{"key":"Options_Audio_MusicVolume","value":"MUSIC VOLUME"},
 		{"key":"Options_Audio_Subtitles","value":"SUBTITLES"},
-			{"key":"Options_Audio_Subtitles_Language","value":"SUBTITLES LANGUAGE"},
+			{"key":"Options_Audio_Subtitles_Language","value":"SUBTITLE LANGUAGE"},
 	{"key":"Options_Controls","value":"CONTROLS"},
 		{"key":"Options_Controls_Reset","value":"RESET"},
 		{"key":"Options_Controls_BindingFor","value":"BINDING FOR"},
@@ -72,22 +72,22 @@
 {"key":"Achievements","value":"Achievemnets"},
 	{"key":"Achievements_Title","value":"ACHIEVEMENTS"},
 		{"key":"achievement_Hidden_Title","value":"HIDDEN"},
-			{"key":"achievement_Hidden_Description","value":"YOU NEED TO COMPLETE THE ACHIEVEMENT BEFORE"},
+			{"key":"achievement_Hidden_Description","value":"YOU NEED TO COMPLETE THE PREVIOUS ACHIEVEMENT"},
 		{"key":"achievement_win_Title","value":"BEAT THE GAME"},
-			{"key":"win_Description","value":"COMPLETE THE LEVEL 1"},
-		{"key":"achievement_winFast_Title","value":"SPEEEED RUN !!"},
+			{"key":"win_Description","value":"COMPLETE LEVEL 1"},
+		{"key":"achievement_winFast_Title","value":"SPEED RUN!"},
 			{"key":"winFast_Description","value":"COMPLETE THE LEVEL 1 WITHIN 55 SECONDS"},
 		{"key":"achievement_shortcut_Title","value":"ALTERNATIVE POINT OF VIEW"},
-			{"key":"shortcut_Description","value":"FIND THE SHORTCUT OF THE LEVEL 1"},
+			{"key":"shortcut_Description","value":"FIND LEVEL 1's SHORTCUT"},
 		{"key":"achievement_Credits_ThankYou_Title","value":"THANK YOU"},
-			{"key":"Credits_ThankYou_Description","value":"LOOK ALL THE CREDITS :)"},
+			{"key":"Credits_ThankYou_Description","value":"LOOK AT ALL THE CREDITS :)"},
 
 {"key":"Extra","value":"Extra"},
 {"key":"Extra_Title","value":"EXTRA"},
 	{"key":"Extra_Changelog","value":"CHANGELOG"},
 	{"key":"Extra_Credits","value":"CREDITS"},
 	{"key":"Extra_ResetTheGame","value":"RESET THE GAME"},
-		{"key":"Extra_ResetTheGame_Warn","value":"YOU ARE ABOUT TO RESET EVERY OPTIONS AND PROGRESS !"},
+		{"key":"Extra_ResetTheGame_Warn","value":"YOU ARE ABOUT TO RESET ALL OPTIONS AND PROGRESS !"},
 		{"key":"Extra_ResetTheGame_Reset","value":"RESET"},
 		{"key":"Extra_ResetTheGame_Cancel","value":"CANCEL"},
 
@@ -119,7 +119,7 @@
 	{"key":"Game_Tutorial_5","value":"Hold "},
 		{"key":"Game_Tutorial_5_2","value":"to run"},
 	{"key":"Game_Tutorial_6","value":"Press "},
-		{"key":"Game_Tutorial_6_2","value":"to switch your black light. The black light reveals invisible things"},
+		{"key":"Game_Tutorial_6_2","value":"to toggle your black light. The black light reveals invisible things, try it out!"},
 	{"key":"Game_SpeedRunTimer","value":"SPEED RUN TIMER :"}
 
 ]}

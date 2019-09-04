@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 
@@ -71,6 +72,7 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
                 gameObject.GetComponentInChildren<Text>().text = PlayerPrefs.GetString(inputToBindTo);
                 setBinding = true;
                 bindingPanel.SetActive(false);
+                ReloadTutorialElements();
             }
         }
         if (setBinding == false)
@@ -103,12 +105,30 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
             PlayerPrefs.SetString(inputToBindTo, currentBind);
             gameObject.GetComponentInChildren<Text>().text = PlayerPrefs.GetString(inputToBindTo);
             Debug.Log("Binding cleared");
+            ReloadTutorialElements();
             
             waitClear = false;
         }
 
         if(PlayerPrefs.GetString(inputToBindTo) != gameObject.GetComponentInChildren<Text>().text) {
             gameObject.GetComponentInChildren<Text>().text = PlayerPrefs.GetString(inputToBindTo);
+        }
+    }
+
+    public static void ReloadTutorialElements ()
+    {
+        //Only do this if we are in the "Level 1" scene
+        if(SceneManager.GetActiveScene().name == "Level 1")
+        {
+            //Reload all 6 tutorial text elements
+            for(int i = 1; i <= 6; i++)
+            {
+                //Generate string of gameobject to find.
+                string path = "Tutorial/Tutorial_" + i.ToString() + " Canvas/Top/Key";
+                //Using the generated path, find the key gameobject for the element and run the
+                //Reload function on the corresponding script.
+                GameObject.Find(path).GetComponent<Tutorial_GetControls>().Reload();
+            }
         }
     }
 
