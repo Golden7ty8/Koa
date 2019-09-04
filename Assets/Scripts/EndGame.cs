@@ -1,6 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour {
+
+    public ControllerPlayer controllerPlayer;
+
+    public float creditsTime;
+    public float fadeToWhiteTime;
+    public GameObject whiteUIPanel;
+
+    bool win = false;
+    float winTimer;
+    bool fadingToWhite = false;
 
     [SerializeField]
     private bool playAudio = false;
@@ -13,6 +25,42 @@ public class EndGame : MonoBehaviour {
     private GameObject completed;
     [SerializeField]
     private Timer timer;
+
+    private void Start() {
+        completed.SetActive(false);
+        winTimer = creditsTime;
+    }
+
+    private void Update()
+    {
+        if(win)
+        {
+            if (fadingToWhite)
+            {
+                Color tmp = whiteUIPanel.GetComponent<Image>().color;
+                whiteUIPanel.GetComponent<Image>().color = new Color(tmp.r, tmp.g, tmp.b, 1.0f - (winTimer / fadeToWhiteTime));
+
+                winTimer -= Time.deltaTime;
+
+                if(winTimer <= 0)
+                {
+                    winTimer = creditsTime;
+                    //Change to Credits Scene HERE!!!!!
+                    SceneManager.LoadScene("Credits", LoadSceneMode.Single);
+                }
+            }
+            else
+            {
+                winTimer -= Time.deltaTime;
+
+                if (winTimer <= 0)
+                {
+                    fadingToWhite = true;
+                    winTimer = fadeToWhiteTime;
+                }
+            }
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -36,5 +84,7 @@ public class EndGame : MonoBehaviour {
         }
         completed.SetActive(true);
         AdvancedGameUI.instance.GetAchievementManager().SetAchievementCompleted("win");
+        controllerPlayer.GetComponent<AudioSource>().PlayOneShot(controllerPlayer.winSound.clip, controllerPlayer.winSound.volume);
+        win = true;
     }
 }
