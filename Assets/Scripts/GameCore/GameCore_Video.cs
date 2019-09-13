@@ -11,8 +11,14 @@ public class GameCore_Video : MonoBehaviour {
     //Reset video options
     public void ResetVideoOptions(GameObject caller) {
 
-        //Language -> English
-        PlayerPrefs.SetInt("video_Language", 0);
+        //Language -> English or system language
+        SystemLanguage defLanguage = Application.systemLanguage;
+        if(defLanguage == SystemLanguage.French) {
+            PlayerPrefs.SetInt("video_Language", 1);
+        }
+        else {
+            PlayerPrefs.SetInt("video_Language", 0);
+        }
         SetLanguage();
         //Screen options -> Actual screen width and height and fullscreen
         PlayerPrefs.SetString("video_Resolution_Width", Screen.width.ToString());

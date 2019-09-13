@@ -5,11 +5,11 @@
 {"key":"Changelog","value":"CHANGELOG"},
 {"key":"Close","value":"CLOSE"},
 
-{"key":"Update_1.0","value":"UPDATE 1.0"},
-	{"key":"UpdateTitle_1.0","value":"UPDATE TITLE"},
-	{"key":"UpdateInfo_1.0","value":"UPDATE MESSAGE"},
-	{"key":"changelog_1.0","value":"-Update"},
+{"key":"Update_1.0.0.0","value":"UPDATE 1.0.0.0"},
+	{"key":"UpdateTitle_1.0.0.0","value":"The Finale Update"},
+	{"key":"UpdateInfo_1.0.0.0","value":"It's been so long since the last build, in order for me to make the changelog I had to check the previous build to see where we last left off and let me just say WOW, is that really how far behind the previous build was? Am I sure I'm looking at the correct previous build? Version 0.0.4.0 was the last build right? It doesn't even have the basic design for the level I made ages ago! Anyway... Once the testers have a crack at this and we fix the bugs that we feel like fixing :P we will release this sucker :) . Hopefully I manage to list all the changes here now that everything is done... ;)\n - Alastair"},
+	{"key":"changelog_1.0.0.0","value":"-Update"},
 
-{"key":"changelogContent","value":"CHANGELOG CONTENT FOR 1.0"}
+{"key":"changelogContent","value":"<b><color=cyan>General</color></b>\n - Added new Music for the Menu and Credits!\n<b><color=cyan>Gameplay</color></b>\n - The level's core gameplay has been finished!\n - The Level and Menu have received makeovers!\n - Added Achievements!\n - Added the Pause Menu!\n - Added Spikes!\n - Added Checkpoints!\n - Added Hidden and Falling Platforms!\n - Added Tutorial Tips!\n - Koa has been tweeked and now glows, literaly!\n\nI think that covers it? Enjoy, and leave feedback!"}
 
 ]}

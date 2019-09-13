@@ -110,7 +110,7 @@
 
 {"key":"Game","value":"GAME"},
 	{"key":"Game_Tutorial_1","value":"Use "},
-		{"key":"Game_Tutorial_1_2","value":"to move"},
+		{"key":"Game_Tutorial_1_2","value":"to move\nYou can change the controls mid-game"},
 	{"key":"Game_Tutorial_2","value":"Press "},
 		{"key":"Game_Tutorial_2_2","value":"to jump"},
 	{"key":"Game_Tutorial_3","value":"Hold down "},

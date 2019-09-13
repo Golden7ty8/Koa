@@ -118,17 +118,8 @@ public class CustomBinding : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public static void ReloadTutorialElements ()
     {
         //Only do this if we are in the "Level 1" scene
-        if(SceneManager.GetActiveScene().name == "Level 1")
-        {
-            //Reload all 6 tutorial text elements
-            for(int i = 1; i <= 6; i++)
-            {
-                //Generate string of gameobject to find.
-                string path = "Tutorial/Tutorial_" + i.ToString() + " Canvas/Top/Key";
-                //Using the generated path, find the key gameobject for the element and run the
-                //Reload function on the corresponding script.
-                GameObject.Find(path).GetComponent<Tutorial_GetControls>().Reload();
-            }
+        if(SceneManager.GetActiveScene().name == "Level 1") {
+            Tutorial_UpdateKeys.instance.ReloadTutorialText();
         }
     }
 

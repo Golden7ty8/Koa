@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Changelog : MonoBehaviour {
 
@@ -19,7 +20,9 @@ public class Changelog : MonoBehaviour {
     [SerializeField]
     private GameObject changelogScreen;
     [SerializeField]
-    private GameObject changelogList;
+    private ChangelogText changelogList;
+    [SerializeField]
+    private ContentSizeFitter content;
 
     private void Start() {
 
@@ -67,8 +70,16 @@ public class Changelog : MonoBehaviour {
         }
 
         //changelogList.GetComponent<ChangelogText>().key = "changelog_" + Application.version;
-        changelogList.GetComponent<ChangelogText>().key = "changelogContent";
+        changelogList.key = "changelogContent";
+        StartCoroutine(UpdateChangelogContent());
 
+    }
+
+    private IEnumerator UpdateChangelogContent() {
+        yield return new WaitForSecondsRealtime(0.1f);
+        content.enabled = false;
+        yield return new WaitForSecondsRealtime(0.1f);
+        content.enabled = true;
     }
 
 }
