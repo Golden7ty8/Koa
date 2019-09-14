@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.886
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1486376759}
-  m_IndirectSpecularColor: {r: 0.082787655, g: 0.1412642, b: 0.2836053, a: 0.886}
+  m_IndirectSpecularColor: {r: 0.08359826, g: 0.14117849, b: 0.2832951, a: 0.886}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1252,6 +1252,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3d35c4f516631dc4589bfd0db3e73515, type: 2}
+    - target: {fileID: 2300002, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400018, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.0056934766
@@ -1299,18 +1311,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
       propertyPath: m_LocalScale.z
       value: 1.4916152
-      objectReference: {fileID: 0}
-    - target: {fileID: 400018, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 400018, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300002, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300004, guid: b47bb9371bacb0e47822d2f05e0affe5, type: 3}
       propertyPath: m_Materials.Array.data[0]
