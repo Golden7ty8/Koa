@@ -87,7 +87,7 @@
 	{"key":"Extra_Changelog","value":"CHANGELOG"},
 	{"key":"Extra_Credits","value":"CREDITS"},
 	{"key":"Extra_ResetTheGame","value":"RESET THE GAME"},
-		{"key":"Extra_ResetTheGame_Warn","value":"YOU ARE ABOUT TO RESET ALL OPTIONS AND PROGRESS !"},
+		{"key":"Extra_ResetTheGame_Warn","value":"YOU ARE ABOUT TO RESET ALL OPTIONS AND PROGRESS!"},
 		{"key":"Extra_ResetTheGame_Reset","value":"RESET"},
 		{"key":"Extra_ResetTheGame_Cancel","value":"CANCEL"},
 
